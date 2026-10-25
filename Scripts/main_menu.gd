@@ -32,8 +32,8 @@ func _process(_delta: float) -> void:
 			0:
 				$AudioHandler/Sounds/SndCantselect.play()
 				print("not starting battle")
-				$"../DogCheck/InukumaWip".play()
-				$"../DogCheck".show()
+				#$"../DogCheck/InukumaWip".play()
+				#$"../DogCheck".show()
 				cnmi = false
 				var bullshit = BattleSystem.instantiate()
 				$"..".add_child(bullshit)

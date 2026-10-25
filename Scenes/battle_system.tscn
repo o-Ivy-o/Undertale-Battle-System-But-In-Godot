@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tvs8hwlpbmdb" path="res://Assets/Sprites/UiButtons/FightButton1.png" id="2_01pil"]
 [ext_resource type="Texture2D" uid="uid://idyq8f6uq73f" path="res://Assets/Sprites/BattleBack.png" id="2_kapky"]
 [ext_resource type="Texture2D" uid="uid://digfwdrawb74r" path="res://Assets/Sprites/UiButtons/FightButton2.png" id="3_cwell"]
+[ext_resource type="Script" uid="uid://ddihpsw6g1jjj" path="res://Scenes/buttons.gd" id="3_fleh8"]
 [ext_resource type="Texture2D" uid="uid://wsxk5yx7m48a" path="res://Assets/Sprites/UiButtons/ActButton1.png" id="4_kapky"]
 [ext_resource type="Texture2D" uid="uid://gedgatljxwob" path="res://Assets/Sprites/UiButtons/ActButton2.png" id="5_mlbmr"]
 [ext_resource type="Texture2D" uid="uid://bu13eelacsman" path="res://Assets/Sprites/UiButtons/ItemButton1.png" id="6_qtphi"]
@@ -12,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://vsulj57cjsm6" path="res://Assets/Sprites/UiButtons/MercyButton2.png" id="9_gsykg"]
 [ext_resource type="Texture2D" uid="uid://dfq1h6iwfwxcy" path="res://Assets/Sprites/DialogueBox.png" id="11_mlbmr"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="12_mlbmr"]
+[ext_resource type="Script" uid="uid://dvyxab2clkc4i" path="res://Scenes/b_soul.gd" id="14_gsykg"]
+[ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="14_n0o2g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
 animations = [{
@@ -69,6 +72,10 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcnqv"]
+radius = 4.0
+height = 8.0
+
 [node name="Battle System" type="Node" unique_id=2143983227]
 
 [node name="Control" parent="." unique_id=2123590375 instance=ExtResource("1_v0xf2")]
@@ -83,6 +90,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_fleh8")
 
 [node name="Fight" type="AnimatedSprite2D" parent="Buttons" unique_id=1732005442]
 position = Vector2(120, 236)
@@ -126,7 +134,21 @@ offset_top = 7.0
 offset_right = 288.0
 offset_bottom = 60.0
 theme_override_fonts/normal_font = ExtResource("12_mlbmr")
-text = "* You encountered the Dummy."
+text = "* Blah Blah Blah"
+
+[node name="BSoul" type="CharacterBody2D" parent="BHellBox" unique_id=2076392609]
+position = Vector2(-94, -142)
+script = ExtResource("14_gsykg")
+metadata/_edit_group_ = true
+
+[node name="Soul" type="Sprite2D" parent="BHellBox/BSoul" unique_id=1524155270]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n0o2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/BSoul" unique_id=1005902901]
+shape = SubResource("CapsuleShape2D_fcnqv")
+
+[node name="BulletHellAnimationPlayer" type="AnimationPlayer" parent="BHellBox" unique_id=1519387180]
 
 [node name="StatusUI" type="Control" parent="." unique_id=391556456]
 layout_mode = 3
@@ -134,24 +156,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Name" type="RichTextLabel" parent="StatusUI" unique_id=1243524961]
-layout_mode = 0
-offset_left = 93.0
-offset_top = 208.0
-offset_right = 139.0
-offset_bottom = 224.0
-theme_override_fonts/normal_font = ExtResource("12_mlbmr")
-theme_override_font_sizes/normal_font_size = 13
-text = "PLRNAM"
-scroll_active = false
+[node name="MSoul" type="Control" parent="." unique_id=1546555182]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
 
-[node name="Love" type="RichTextLabel" parent="StatusUI" unique_id=72410881]
-layout_mode = 0
-offset_left = 139.0
-offset_top = 208.0
-offset_right = 185.0
-offset_bottom = 224.0
-theme_override_fonts/normal_font = ExtResource("12_mlbmr")
-theme_override_font_sizes/normal_font_size = 13
-text = "LV ?"
-scroll_active = false
+[node name="Soul" type="Sprite2D" parent="MSoul" unique_id=533157126]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n0o2g")

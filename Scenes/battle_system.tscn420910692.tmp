@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://djquesnsypclm"]
+
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="1_v0xf2"]
+[ext_resource type="Texture2D" uid="uid://tvs8hwlpbmdb" path="res://Assets/Sprites/UiButtons/FightButton1.png" id="2_01pil"]
+[ext_resource type="Texture2D" uid="uid://idyq8f6uq73f" path="res://Assets/Sprites/BattleBack.png" id="2_kapky"]
+[ext_resource type="Texture2D" uid="uid://digfwdrawb74r" path="res://Assets/Sprites/UiButtons/FightButton2.png" id="3_cwell"]
+[ext_resource type="Script" uid="uid://ddihpsw6g1jjj" path="res://Scenes/buttons.gd" id="3_fleh8"]
+[ext_resource type="Texture2D" uid="uid://wsxk5yx7m48a" path="res://Assets/Sprites/UiButtons/ActButton1.png" id="4_kapky"]
+[ext_resource type="Texture2D" uid="uid://gedgatljxwob" path="res://Assets/Sprites/UiButtons/ActButton2.png" id="5_mlbmr"]
+[ext_resource type="Texture2D" uid="uid://bu13eelacsman" path="res://Assets/Sprites/UiButtons/ItemButton1.png" id="6_qtphi"]
+[ext_resource type="Texture2D" uid="uid://cbvvbwtjwy3ch" path="res://Assets/Sprites/UiButtons/ItemButton2.png" id="7_fleh8"]
+[ext_resource type="Texture2D" uid="uid://bddng78nx5836" path="res://Assets/Sprites/UiButtons/MercyButton1.png" id="8_n0o2g"]
+[ext_resource type="Texture2D" uid="uid://vsulj57cjsm6" path="res://Assets/Sprites/UiButtons/MercyButton2.png" id="9_gsykg"]
+[ext_resource type="Texture2D" uid="uid://dfq1h6iwfwxcy" path="res://Assets/Sprites/DialogueBox.png" id="11_mlbmr"]
+[ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="12_mlbmr"]
+[ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="14_n0o2g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_01pil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cwell")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khhxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kapky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mlbmr")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsuaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qtphi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fleh8")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wb4oo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_n0o2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gsykg")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcnqv"]
+radius = 4.0
+height = 8.0
+
+[node name="Battle System" type="Node" unique_id=2143983227]
+
+[node name="Control" parent="." unique_id=2123590375 instance=ExtResource("1_v0xf2")]
+
+[node name="BattleBack" type="Sprite2D" parent="." unique_id=551147880]
+position = Vector2(240, 81)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kapky")
+
+[node name="Buttons" type="Control" parent="." unique_id=447287189]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_fleh8")
+
+[node name="Fight" type="AnimatedSprite2D" parent="Buttons" unique_id=1732005442]
+position = Vector2(120, 236)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_s1fef")
+autoplay = "default"
+
+[node name="Act" type="AnimatedSprite2D" parent="Buttons" unique_id=1325964123]
+position = Vector2(199, 236)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_khhxn")
+autoplay = "default"
+
+[node name="Item" type="AnimatedSprite2D" parent="Buttons" unique_id=1546976447]
+position = Vector2(278, 236)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_qsuaf")
+autoplay = "default"
+
+[node name="Mercy" type="AnimatedSprite2D" parent="Buttons" unique_id=1409497679]
+position = Vector2(357, 236)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wb4oo")
+autoplay = "default"
+
+[node name="BHellBox" type="NinePatchRect" parent="." unique_id=480527941]
+offset_left = 94.0
+offset_top = 142.0
+offset_right = 386.0
+offset_bottom = 207.0
+texture = ExtResource("11_mlbmr")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Text" type="RichTextLabel" parent="BHellBox" unique_id=804385110]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 288.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("12_mlbmr")
+text = "* Blah Blah Blah"
+
+[node name="BSoul" type="CharacterBody2D" parent="BHellBox" unique_id=2076392609]
+position = Vector2(-55, 42)
+metadata/_edit_group_ = true
+
+[node name="Soul" type="Sprite2D" parent="BHellBox/BSoul" unique_id=1524155270]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n0o2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/BSoul" unique_id=1005902901]
+shape = SubResource("CapsuleShape2D_fcnqv")
+
+[node name="StatusUI" type="Control" parent="." unique_id=391556456]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MSoul" type="Control" parent="." unique_id=1546555182]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Soul" type="Sprite2D" parent="MSoul" unique_id=533157126]
+position = Vector2(112, 170)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n0o2g")
