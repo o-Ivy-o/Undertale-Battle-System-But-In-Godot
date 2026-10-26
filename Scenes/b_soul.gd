@@ -7,6 +7,12 @@ var Soulspeed = 60
 func _process(delta: float) -> void:
 	var dir = Input.get_vector("Left","Right","Up","Down",)
 	
+	match Input.is_action_pressed("Back"):
+		false:
+			Soulspeed = 60
+		true:
+			Soulspeed = 30
+	
 	if dir:
 		velocity = dir*Soulspeed
 	else:

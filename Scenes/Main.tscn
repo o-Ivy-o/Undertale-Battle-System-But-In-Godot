@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ciokn6gmg35sa" path="res://Scripts/dog.gd" id="2_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bf1tc4spyoab2" path="res://Assets/Sprites/dogbody.png" id="3_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://coah6cr143yaa" path="res://Assets/Sprites/doghead.png" id="4_v1gob"]
+[ext_resource type="PackedScene" uid="uid://ccqih6e0feafs" path="res://Scenes/QuitGame.tscn" id="7_50glp"]
 
 [sub_resource type="Animation" id="Animation_pbw6q"]
 resource_name = "DogHead"
@@ -74,3 +75,5 @@ position = Vector2(236, 122)
 rotation = 0.06981317
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_v1gob")
+
+[node name="QuitGame" parent="." unique_id=1834841503 instance=ExtResource("7_50glp")]

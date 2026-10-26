@@ -14,6 +14,9 @@ func _process(_delta: float) -> void:
 	$MusicVol.text = "Master Volume: " + str(Global.MusicVol)
 	$Border.text = "Border: " + str(Global.BorderName)
 	$BattleSong.text = "Battle Theme: " + str(Global.BattleThemeName)
+	$AliceCredit.visible = false
+	if Global.BattleTheme == 2:
+		$AliceCredit.visible = true
 	
 	if Input.is_action_just_pressed("Down") and cmi and meni != maxmeni:
 		meni += 1

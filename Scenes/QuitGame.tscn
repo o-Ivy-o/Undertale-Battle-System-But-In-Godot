@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ccqih6e0feafs"]
+
+[ext_resource type="Script" uid="uid://cbrkhgx3s5jub" path="res://Scenes/quit_game.gd" id="1_2olmt"]
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="2_57fjq"]
+[ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="3_m7kn2"]
+
+[sub_resource type="Animation" id="Animation_2olmt"]
+resource_name = "Quit"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuitText:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Quitting", "Quitting.", "Quitting..", "Quitting...", "Quitting...."]
+}
+
+[sub_resource type="Animation" id="Animation_57fjq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuitText:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Quitting"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7kn2"]
+_data = {
+&"Quit": SubResource("Animation_2olmt"),
+&"RESET": SubResource("Animation_57fjq")
+}
+
+[node name="QuitGame" type="Control" unique_id=1834841503]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2olmt")
+
+[node name="Control" parent="." unique_id=2123590375 instance=ExtResource("2_57fjq")]
+
+[node name="QuitText" type="RichTextLabel" parent="." unique_id=1797962886]
+z_index = 248
+layout_mode = 0
+offset_left = 81.0
+offset_top = 16.0
+offset_right = 191.0
+offset_bottom = 38.0
+theme_override_fonts/normal_font = ExtResource("3_m7kn2")
+text = "Quitting"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=126184914]
+libraries/ = SubResource("AnimationLibrary_m7kn2")

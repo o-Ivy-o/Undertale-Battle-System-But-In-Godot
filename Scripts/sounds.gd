@@ -1,9 +1,7 @@
 extends Node
 
 @onready var BattleThemes : Array = $BattleThemes.get_children()
-
-
-
+@onready var selectedBattleTheme : AudioStreamPlayer
 
 @onready var snd_txtivy: AudioStreamPlayer = $Sounds/SndTxtivy
 @onready var snd_break_1: AudioStreamPlayer2D = $Sounds/SndBreak1
@@ -28,26 +26,7 @@ extends Node
 @onready var menu: AudioStreamPlayer = $Music/Menu
 @onready var battle: AudioStreamPlayer = $BattleThemes/Battle
 @onready var mus_battle_1: AudioStreamPlayer = $BattleThemes/MusBattle1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-func _ready() -> void:
-	print("iexist")
+@onready var polite_buster_by_alice: AudioStreamPlayer = $"BattleThemes/Polite Buster by Alice"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -58,4 +37,7 @@ func _process(_delta: float) -> void:
 	Global.MaxBattleTheme = $BattleThemes.get_child_count() -1
 	
 	Global.BattleThemeName = BattleThemes.get(Global.BattleTheme).get_meta("ThemeName")
+	
+	
+	selectedBattleTheme = BattleThemes.get(Global.BattleTheme)
 	

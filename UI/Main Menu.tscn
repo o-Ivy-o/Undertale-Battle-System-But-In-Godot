@@ -157,6 +157,19 @@ theme_override_colors/default_color = Color(1, 1, 1, 0.5137255)
 theme_override_fonts/normal_font = ExtResource("2_owi87")
 text = "Take your time"
 
+[node name="AliceCredit" type="RichTextLabel" parent="Settings Menu" unique_id=1959465698]
+visible = false
+layout_mode = 0
+offset_left = 96.0
+offset_top = 196.0
+offset_right = 413.0
+offset_bottom = 248.0
+theme_override_colors/default_color = Color(1, 1, 1, 0.29411766)
+theme_override_fonts/normal_font = ExtResource("2_owi87")
+theme_override_font_sizes/normal_font_size = 8
+text = "* Polite Buster by Alice:
+https://soundcloud.com/aarctoid"
+
 [node name="Main Menu" type="Control" parent="." unique_id=1394740662]
 visible = false
 anchors_preset = 0

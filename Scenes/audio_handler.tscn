@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://0w523frmy0vb" path="res://Assets/Music/mus_options_winter.ogg" id="21_1sj3s"]
 [ext_resource type="AudioStream" uid="uid://bwdqpmg3eed62" path="res://Assets/Music/battle.ogg" id="22_hfile"]
 [ext_resource type="AudioStream" uid="uid://dobn1a43ogjmv" path="res://Assets/Music/mus_battle1.ogg" id="23_6odp6"]
+[ext_resource type="AudioStream" uid="uid://dve555j3skw3v" path="res://Assets/Music/RUDEBUSTER.ogg" id="24_yjp8e"]
 
 [node name="AudioHandler" type="Node2D" unique_id=2107132292]
 script = ExtResource("1_6y3po")
@@ -118,10 +119,14 @@ stream = ExtResource("18_0gbaw")
 
 [node name="BattleThemes" type="Node" parent="." unique_id=1832218537]
 
+[node name="MusBattle1" type="AudioStreamPlayer" parent="BattleThemes" unique_id=1760197369]
+stream = ExtResource("23_6odp6")
+metadata/ThemeName = "Enemy Approach"
+
 [node name="Battle" type="AudioStreamPlayer" parent="BattleThemes" unique_id=2031162537]
 stream = ExtResource("22_hfile")
 metadata/ThemeName = "Rude Buster"
 
-[node name="MusBattle1" type="AudioStreamPlayer" parent="BattleThemes" unique_id=1760197369]
-stream = ExtResource("23_6odp6")
-metadata/ThemeName = "Enemy Approaching"
+[node name="Polite Buster by Alice" type="AudioStreamPlayer" parent="BattleThemes" unique_id=57273300]
+stream = ExtResource("24_yjp8e")
+metadata/ThemeName = "Polite Buster"

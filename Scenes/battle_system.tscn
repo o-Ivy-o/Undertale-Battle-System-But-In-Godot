@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://djquesnsypclm"]
 
+[ext_resource type="Script" uid="uid://dr2wm54wmtvfs" path="res://Scripts/battle_system.gd" id="1_gsykg"]
 [ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="1_v0xf2"]
 [ext_resource type="Texture2D" uid="uid://tvs8hwlpbmdb" path="res://Assets/Sprites/UiButtons/FightButton1.png" id="2_01pil"]
 [ext_resource type="Texture2D" uid="uid://idyq8f6uq73f" path="res://Assets/Sprites/BattleBack.png" id="2_kapky"]
@@ -76,7 +77,195 @@ animations = [{
 radius = 4.0
 height = 8.0
 
+[sub_resource type="Animation" id="Animation_j2wp6"]
+resource_name = "End"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(67, 65), Vector2(292, 65)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(205, 142), Vector2(94, 142)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BSoul:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Text:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_l4k2t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(292, 65)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(94, 142)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BSoul:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BSoul:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_sr1il"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(292, 65), Vector2(67, 65)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(94, 142), Vector2(205, 142)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BSoul:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BSoul:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpxiv"]
+_data = {
+&"End": SubResource("Animation_j2wp6"),
+&"RESET": SubResource("Animation_l4k2t"),
+&"Start": SubResource("Animation_sr1il")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qrxg"]
+size = Vector2(292, 2)
+
 [node name="Battle System" type="Node" unique_id=2143983227]
+script = ExtResource("1_gsykg")
 
 [node name="Control" parent="." unique_id=2123590375 instance=ExtResource("1_v0xf2")]
 
@@ -128,16 +317,21 @@ patch_margin_right = 3
 patch_margin_bottom = 3
 
 [node name="Text" type="RichTextLabel" parent="BHellBox" unique_id=804385110]
+visible = false
 layout_mode = 0
 offset_left = 8.0
 offset_top = 7.0
 offset_right = 288.0
 offset_bottom = 60.0
 theme_override_fonts/normal_font = ExtResource("12_mlbmr")
-text = "* Blah Blah Blah"
+text = "* Hear me out what if gaster is the roaring knight?"
+
+[node name="LetterTimer" type="Timer" parent="BHellBox/Text" unique_id=87893033]
+wait_time = 0.05
 
 [node name="BSoul" type="CharacterBody2D" parent="BHellBox" unique_id=2076392609]
-position = Vector2(-94, -142)
+visible = false
+position = Vector2(33, 32)
 script = ExtResource("14_gsykg")
 metadata/_edit_group_ = true
 
@@ -149,6 +343,40 @@ texture = ExtResource("14_n0o2g")
 shape = SubResource("CapsuleShape2D_fcnqv")
 
 [node name="BulletHellAnimationPlayer" type="AnimationPlayer" parent="BHellBox" unique_id=1519387180]
+libraries/ = SubResource("AnimationLibrary_qpxiv")
+
+[node name="UpperBorder" type="StaticBody2D" parent="BHellBox" unique_id=1596635987]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/UpperBorder" unique_id=1621500960]
+position = Vector2(146, 1)
+shape = SubResource("RectangleShape2D_0qrxg")
+
+[node name="LowerBorder" type="StaticBody2D" parent="BHellBox" unique_id=597088215]
+position = Vector2(0, 63)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/LowerBorder" unique_id=1823654535]
+position = Vector2(146, 1)
+shape = SubResource("RectangleShape2D_0qrxg")
+
+[node name="LeftBorder" type="StaticBody2D" parent="BHellBox" unique_id=1190069340]
+position = Vector2(2, 0)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/LeftBorder" unique_id=555428156]
+position = Vector2(146, 1)
+shape = SubResource("RectangleShape2D_0qrxg")
+
+[node name="RightBorder" type="StaticBody2D" parent="BHellBox" unique_id=1102854006]
+position = Vector2(67, 0)
+rotation = 1.5707964
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/RightBorder" unique_id=419552505]
+position = Vector2(146, 1)
+shape = SubResource("RectangleShape2D_0qrxg")
 
 [node name="StatusUI" type="Control" parent="." unique_id=391556456]
 layout_mode = 3
@@ -159,10 +387,11 @@ offset_bottom = 40.0
 [node name="MSoul" type="Control" parent="." unique_id=1546555182]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 1.0
 metadata/_edit_group_ = true
 
 [node name="Soul" type="Sprite2D" parent="MSoul" unique_id=533157126]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_n0o2g")
+
+[connection signal="timeout" from="BHellBox/Text/LetterTimer" to="." method="_on_letter_timer_timeout"]

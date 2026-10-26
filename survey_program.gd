@@ -68,7 +68,7 @@ func gomenu():
 	var main_menu = mainscene.instantiate()
 	add_child(main_menu)
 	$Text.visible = false
-	$NamingScreen.visible = false
+	#$NamingScreen.visible = false
 	$WhiteTransition.visible = false
 	$Light.visible = false
 	$Soul.visible = false
