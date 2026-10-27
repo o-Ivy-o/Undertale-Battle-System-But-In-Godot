@@ -11,16 +11,21 @@ func _ready() -> void:
 func startbhell():
 	battlemessag("* The battle starts..")
 	await get_tree().create_timer(3).timeout
-	$BHellBox/BulletHellAnimationPlayer.play("Start")
-	$BHellBox/BSoul.canmove = true
+	$MSoul.hide()
 	$Buttons.canmoveindex = false
-	await get_tree().create_timer(5).timeout
+	$BHellBox/BSoul.soulmode = 0
+	$BHellBox/BulletHellAnimationPlayer.play("Start")
+	await $BHellBox/BulletHellAnimationPlayer.animation_finished
+	$BHellBox/Bullets/PatternAnimations.play("Test2")
+	$BHellBox/BSoul.canmove = true
+	await $BHellBox/Bullets/PatternAnimations.animation_finished
 	endbhell()
 
 func endbhell():
 	$BHellBox/BulletHellAnimationPlayer.play("End")
 	$BHellBox/BSoul.canmove = false
 	await  $BHellBox/BulletHellAnimationPlayer.animation_finished
+	$MSoul.show()
 	battlemessag("* its now turn 2!")
 	$Buttons.canmoveindex = true
 

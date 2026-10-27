@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://baqeva5lfidp2"]
+
+[ext_resource type="Script" uid="uid://cnp2vfpe7vv70" path="res://test_bullet.gd" id="1_euuuc"]
+[ext_resource type="Texture2D" uid="uid://mkqo33t4fkfy" path="res://Assets/Sprites/Pellet.png" id="2_euuuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qrxg"]
+size = Vector2(6, 14)
+
+[sub_resource type="Animation" id="Animation_euuuc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707964]
+}
+
+[sub_resource type="Animation" id="Animation_x1vkx"]
+resource_name = "spin"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1.3195088),
+"update": 0,
+"values": [-1.5707964, 1.5707964]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ti0fj"]
+_data = {
+&"RESET": SubResource("Animation_euuuc"),
+&"spin": SubResource("Animation_x1vkx")
+}
+
+[node name="TestBullet" type="Area2D" unique_id=924173222]
+rotation = -1.5707964
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_euuuc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1720260313]
+shape = SubResource("RectangleShape2D_0qrxg")
+
+[node name="Pellet" type="Sprite2D" parent="." unique_id=214532127]
+texture = ExtResource("2_euuuc")
+
+[node name="igospinnn" type="AnimationPlayer" parent="." unique_id=19073235]
+libraries/ = SubResource("AnimationLibrary_ti0fj")
+autoplay = &"spin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

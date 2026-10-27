@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://bwdqpmg3eed62" path="res://Assets/Music/battle.ogg" id="22_hfile"]
 [ext_resource type="AudioStream" uid="uid://dobn1a43ogjmv" path="res://Assets/Music/mus_battle1.ogg" id="23_6odp6"]
 [ext_resource type="AudioStream" uid="uid://dve555j3skw3v" path="res://Assets/Music/RUDEBUSTER.ogg" id="24_yjp8e"]
+[ext_resource type="AudioStream" uid="uid://bnvcl480oujf4" path="res://Assets/Music/FreedomBreaker.ogg" id="27_lq6ld"]
 
 [node name="AudioHandler" type="Node2D" unique_id=2107132292]
 script = ExtResource("1_6y3po")
@@ -130,3 +131,8 @@ metadata/ThemeName = "Rude Buster"
 [node name="Polite Buster by Alice" type="AudioStreamPlayer" parent="BattleThemes" unique_id=57273300]
 stream = ExtResource("24_yjp8e")
 metadata/ThemeName = "Polite Buster"
+
+[node name="FreedomBreaker" type="AudioStreamPlayer" parent="BattleThemes" unique_id=107383649]
+stream = ExtResource("27_lq6ld")
+pitch_scale = 0.9
+metadata/ThemeName = "Freedom Breakr"

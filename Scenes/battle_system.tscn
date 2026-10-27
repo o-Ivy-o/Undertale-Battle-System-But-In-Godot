@@ -16,6 +16,11 @@
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="12_mlbmr"]
 [ext_resource type="Script" uid="uid://dvyxab2clkc4i" path="res://Scenes/b_soul.gd" id="14_gsykg"]
 [ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="14_n0o2g"]
+[ext_resource type="Texture2D" uid="uid://4sw8ayssp3e2" path="res://Assets/Sprites/Blue.png" id="16_qpxiv"]
+[ext_resource type="Texture2D" uid="uid://cgjstbme2c7sc" path="res://Assets/Sprites/Bluehurt.png" id="17_e5ted"]
+[ext_resource type="Texture2D" uid="uid://c8m2scrjj15a5" path="res://Assets/Sprites/redhurt.png" id="17_j2wp6"]
+[ext_resource type="Script" uid="uid://cgfpmynhwboba" path="res://Scenes/bullets.gd" id="20_e5ted"]
+[ext_resource type="PackedScene" uid="uid://baqeva5lfidp2" path="res://Scripts/test_bullet.tscn" id="20_qpxiv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
 animations = [{
@@ -76,6 +81,31 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcnqv"]
 radius = 4.0
 height = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qrxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qpxiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e5ted")
+}],
+"loop": 1,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_n0o2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_j2wp6")
+}],
+"loop": 1,
+"name": &"Red",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_j2wp6"]
 resource_name = "End"
@@ -264,6 +294,324 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qrxg"]
 size = Vector2(292, 2)
 
+[sub_resource type="Animation" id="Animation_qpxiv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TestBullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TestBullet:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.298746]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TestBullet:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BSoul:soulmode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TestBullet3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TestBullet4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TestBullet5:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TestBullet6:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TestBullet3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 7)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TestBullet4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, -3)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TestBullet5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("TestBullet6:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_heo5b"]
+resource_name = "Test2"
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TestBullet:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TestBullet:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 4), Vector2(45, 67)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BSoul:soulmode")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.1333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TestBullet3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TestBullet4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TestBullet5:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TestBullet6:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TestBullet3:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5, 7), Vector2(24, 81)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TestBullet4:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, -3), Vector2(58, 71)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TestBullet5:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(14, 0), Vector2(43, 74)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("TestBullet6:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2, 2.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(45, -8), Vector2(74, 66)]
+}
+
+[sub_resource type="Animation" id="Animation_e5ted"]
+resource_name = "TestPattern"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TestBullet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 3.97, 4.33, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-15, -5), Vector2(73, 67), Vector2(7, 56), Vector2(34, 23), Vector2(50, 22), Vector2(34, 41)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TestBullet:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.298746]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_heo5b"]
+_data = {
+&"RESET": SubResource("Animation_qpxiv"),
+&"Test2": SubResource("Animation_heo5b"),
+&"TestPattern": SubResource("Animation_e5ted")
+}
+
 [node name="Battle System" type="Node" unique_id=2143983227]
 script = ExtResource("1_gsykg")
 
@@ -333,19 +681,25 @@ wait_time = 0.05
 visible = false
 position = Vector2(33, 32)
 script = ExtResource("14_gsykg")
+soulmode = 1
 metadata/_edit_group_ = true
-
-[node name="Soul" type="Sprite2D" parent="BHellBox/BSoul" unique_id=1524155270]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_n0o2g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/BSoul" unique_id=1005902901]
 shape = SubResource("CapsuleShape2D_fcnqv")
+metadata/soul = true
+
+[node name="Soul" type="AnimatedSprite2D" parent="BHellBox/BSoul" unique_id=161535707]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_0qrxg")
+animation = &"Blue"
+
+[node name="InvincTimer" type="Timer" parent="BHellBox/BSoul" unique_id=716828214]
 
 [node name="BulletHellAnimationPlayer" type="AnimationPlayer" parent="BHellBox" unique_id=1519387180]
 libraries/ = SubResource("AnimationLibrary_qpxiv")
 
 [node name="UpperBorder" type="StaticBody2D" parent="BHellBox" unique_id=1596635987]
+visible = false
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/UpperBorder" unique_id=1621500960]
@@ -353,6 +707,7 @@ position = Vector2(146, 1)
 shape = SubResource("RectangleShape2D_0qrxg")
 
 [node name="LowerBorder" type="StaticBody2D" parent="BHellBox" unique_id=597088215]
+visible = false
 position = Vector2(0, 63)
 metadata/_edit_group_ = true
 
@@ -361,6 +716,7 @@ position = Vector2(146, 1)
 shape = SubResource("RectangleShape2D_0qrxg")
 
 [node name="LeftBorder" type="StaticBody2D" parent="BHellBox" unique_id=1190069340]
+visible = false
 position = Vector2(2, 0)
 rotation = 1.5707964
 metadata/_edit_group_ = true
@@ -370,6 +726,7 @@ position = Vector2(146, 1)
 shape = SubResource("RectangleShape2D_0qrxg")
 
 [node name="RightBorder" type="StaticBody2D" parent="BHellBox" unique_id=1102854006]
+visible = false
 position = Vector2(67, 0)
 rotation = 1.5707964
 metadata/_edit_group_ = true
@@ -377,6 +734,34 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BHellBox/RightBorder" unique_id=419552505]
 position = Vector2(146, 1)
 shape = SubResource("RectangleShape2D_0qrxg")
+
+[node name="Bullets" type="Control" parent="BHellBox" unique_id=1109245339]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_e5ted")
+
+[node name="PatternAnimations" type="AnimationPlayer" parent="BHellBox/Bullets" unique_id=425382471]
+libraries/ = SubResource("AnimationLibrary_heo5b")
+
+[node name="TestBullet" parent="BHellBox/Bullets" unique_id=924173222 instance=ExtResource("20_qpxiv")]
+position = Vector2(-15, -5)
+
+[node name="TestBullet2" parent="BHellBox/Bullets" unique_id=192140193 instance=ExtResource("20_qpxiv")]
+visible = false
+position = Vector2(-15, -5)
+
+[node name="TestBullet3" parent="BHellBox/Bullets" unique_id=794023832 instance=ExtResource("20_qpxiv")]
+position = Vector2(-5, 7)
+
+[node name="TestBullet4" parent="BHellBox/Bullets" unique_id=1170152974 instance=ExtResource("20_qpxiv")]
+position = Vector2(29, -3)
+
+[node name="TestBullet5" parent="BHellBox/Bullets" unique_id=2054543054 instance=ExtResource("20_qpxiv")]
+position = Vector2(14, 0)
+
+[node name="TestBullet6" parent="BHellBox/Bullets" unique_id=1701541424 instance=ExtResource("20_qpxiv")]
+position = Vector2(45, -8)
 
 [node name="StatusUI" type="Control" parent="." unique_id=391556456]
 layout_mode = 3
@@ -395,3 +780,10 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_n0o2g")
 
 [connection signal="timeout" from="BHellBox/Text/LetterTimer" to="." method="_on_letter_timer_timeout"]
+[connection signal="timeout" from="BHellBox/BSoul/InvincTimer" to="BHellBox/BSoul" method="_on_invinc_timer_timeout"]
+[connection signal="hit" from="BHellBox/Bullets/TestBullet" to="BHellBox/BSoul" method="_on_test_bullet_hit"]
+[connection signal="hit" from="BHellBox/Bullets/TestBullet2" to="BHellBox/BSoul" method="_on_test_bullet_hit"]
+[connection signal="hit" from="BHellBox/Bullets/TestBullet3" to="BHellBox/BSoul" method="_on_test_bullet_hit"]
+[connection signal="hit" from="BHellBox/Bullets/TestBullet4" to="BHellBox/BSoul" method="_on_test_bullet_hit"]
+[connection signal="hit" from="BHellBox/Bullets/TestBullet5" to="BHellBox/BSoul" method="_on_test_bullet_hit"]
+[connection signal="hit" from="BHellBox/Bullets/TestBullet6" to="BHellBox/BSoul" method="_on_test_bullet_hit"]

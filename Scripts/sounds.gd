@@ -27,6 +27,7 @@ extends Node
 @onready var battle: AudioStreamPlayer = $BattleThemes/Battle
 @onready var mus_battle_1: AudioStreamPlayer = $BattleThemes/MusBattle1
 @onready var polite_buster_by_alice: AudioStreamPlayer = $"BattleThemes/Polite Buster by Alice"
+@onready var freedom_breaker: AudioStreamPlayer = $BattleThemes/FreedomBreaker
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
