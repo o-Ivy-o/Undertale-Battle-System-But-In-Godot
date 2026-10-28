@@ -6,7 +6,7 @@ var li : int = 0
 var cnmi : bool = true
 @onready var MenuTheme = $AudioHandler/Music/Menu
 @onready var SettingsTheme = $AudioHandler/Music/MusOptionsFall
-@export var BattleSystem : PackedScene
+#@export var BattleSystem : PackedScene
 
 #when scene gets created
 func _ready() -> void:
@@ -35,9 +35,7 @@ func _process(_delta: float) -> void:
 				#$"../DogCheck/InukumaWip".play()
 				#$"../DogCheck".show()
 				cnmi = false
-				var bullshit = BattleSystem.instantiate()
-				$"..".add_child(bullshit)
-				queue_free()
+				get_tree().change_scene_to_file("res://Scenes/battle_system.tscn")
 			1:
 				$AudioHandler/Sounds/SndSelect.play()
 				hidemenu()

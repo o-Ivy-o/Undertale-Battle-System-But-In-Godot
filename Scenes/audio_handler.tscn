@@ -134,5 +134,4 @@ metadata/ThemeName = "Polite Buster"
 
 [node name="FreedomBreaker" type="AudioStreamPlayer" parent="BattleThemes" unique_id=107383649]
 stream = ExtResource("27_lq6ld")
-pitch_scale = 0.9
 metadata/ThemeName = "Freedom Breakr"

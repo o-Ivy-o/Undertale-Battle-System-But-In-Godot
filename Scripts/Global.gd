@@ -9,7 +9,7 @@ var BattleThemeName : String = ""
 var MaxBattleTheme : int = 0
 var MusicVol = 1
 var PlayerName : String = ""
-var PlayerLove : int
+var PlayerLove : int = 1
 var SetName : bool = false
 
 

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var hp = 20
 var Soulspeed = 60
 var invincible = false
 @export var soulmode : int    #0 = red #1 = blue
@@ -38,10 +39,16 @@ func _on_test_bullet_hit(body,b) -> void:
 	if body == self and invincible != true:
 		AudioHandler.snd_hurt_1.play()
 		invincible = true
+		hp -= 4
 		$InvincTimer.start()
 		$Soul.play()
 		print("hit")
-		b.queue_free()
+		b.visible = false
+		b.canhurt = false
+		if hp <= 0:
+			
+			AudioHandler.selectedBattleTheme.stop()
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
 func _on_invinc_timer_timeout() -> void:

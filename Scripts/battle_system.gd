@@ -3,6 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for i in $BHellBox/Bullets.get_children():
+		i.visible = false
 	await get_tree().create_timer(.1).timeout
 	AudioHandler.selectedBattleTheme.play()
 	startbhell()
@@ -14,11 +16,13 @@ func startbhell():
 	$MSoul.hide()
 	$Buttons.canmoveindex = false
 	$BHellBox/BSoul.soulmode = 0
+	for i in $BHellBox/Bullets.get_children():
+		i.canhurt = true
 	$BHellBox/BulletHellAnimationPlayer.play("Start")
 	await $BHellBox/BulletHellAnimationPlayer.animation_finished
-	$BHellBox/Bullets/PatternAnimations.play("Test2")
+	$BHellBox/PatternAnimations.play("Test2")
 	$BHellBox/BSoul.canmove = true
-	await $BHellBox/Bullets/PatternAnimations.animation_finished
+	await $BHellBox/PatternAnimations.animation_finished
 	endbhell()
 
 func endbhell():

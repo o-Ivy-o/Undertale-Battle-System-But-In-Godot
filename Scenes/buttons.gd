@@ -24,7 +24,14 @@ func _process(delta: float) -> void:
 			if buttonindex < maxbuttonindex:
 				buttonindex += 1
 				AudioHandler.snd_menumove.play()
+			else:
+				buttonindex = 0
+				AudioHandler.snd_menumove.play()
 		elif Input.is_action_just_pressed("Left"):
 			if buttonindex > 0:
 				buttonindex -= 1
+				AudioHandler.snd_menumove.play()
+			else:
+				buttonindex = maxbuttonindex
+				$"..".startbhell()
 				AudioHandler.snd_menumove.play()

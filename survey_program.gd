@@ -11,7 +11,7 @@ var caninteract = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Global.SetName:
-		gomenu()
+		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 		caninteract = false
 	else:
 		#audio_handler.Music.AudioAnotherhim.play()
@@ -76,7 +76,8 @@ func gomenu():
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Transition":
 		$Transition.stop()
-		gomenu()
+		#gomenu()
+		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 		SaveManager.save()
 	elif anim_name == "FriskAppear" and curtxtp == 1:
 		$Transition.play("FriskIdle")
