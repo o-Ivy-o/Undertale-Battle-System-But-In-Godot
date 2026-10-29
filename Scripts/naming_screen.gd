@@ -13,6 +13,27 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	$IDK.text = ""
+	
+	match $Name.text:
+		"CHARA":
+			$IDK.text = "        The true name."
+		"AAAAAA":
+			$IDK.text = "      Not very creative...?"
+		"PAPYRU":
+			$IDK.text = "        I'LL ALLOW IT!!!!" 
+		"":
+			$IDK.text = "     You must choose a name."
+		"MURDER":
+			$IDK.text = "  That's a little on-the-nose" 
+		"MERCY":
+			$IDK.text = "  That's a little on-the-nose" 
+		"GASTER":
+			get_tree().change_scene_to_file("res://Scenes/intro.tscn")
+		"ALPHYS": 
+			$IDK.text = "        D-don't do that."
+		"SANS":
+			$IDK.text = "            nope."
 	for i in Letters:
 		i.modulate = Color(Color.WHITE)
 		
@@ -140,7 +161,7 @@ func _process(_delta: float) -> void:
 			Name = Name.substr(0, Name.length() - 1)
 			$Name.text = Name
 	elif Input.is_action_just_pressed("ConfirmName") and cmi:
-		if $Name.text != "":
+		if $Name.text not in ["","GASTER","ALPHYS","ASGORE","UNDYNE","SANS","TORIEL","FLOWEY","ASRIEL"]:
 			$"../Soul".position = Vector2(239.96,202.88)
 			$"../Soul".scale = Vector2(.75,.75)
 			cmi = false
