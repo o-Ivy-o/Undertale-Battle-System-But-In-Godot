@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var hp = 20
+@export var hp = Stats.maxhp.get(Global.PlayerLove-1)
 var Soulspeed = 60
 var invincible = false
 @export var soulmode : int    #0 = red #1 = blue

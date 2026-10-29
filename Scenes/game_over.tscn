@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bdeco823sr65y"]
 
 [ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="1_8fo1c"]
-[ext_resource type="Script" uid="uid://c4nxkfi520u7j" path="res://Scenes/game_over.gd" id="1_mitgx"]
-[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="2_ek8ke"]
+[ext_resource type="Script" uid="uid://c4nxkfi520u7j" path="res://Scripts/game_over.gd" id="1_mitgx"]
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="2_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://hpg8er037t7u" path="res://Assets/Sprites/BrokenSoul.png" id="3_14u15"]
 [ext_resource type="AudioStream" uid="uid://c503ptj4aob2w" path="res://Assets/Sounds/snd_break1.wav" id="4_j3ryr"]
 [ext_resource type="AudioStream" uid="uid://bdv4af0apdtbk" path="res://Assets/Sounds/snd_break2.wav" id="5_rjluv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dl724vqpxlmkh" path="res://Assets/Sprites/debris4.png" id="8_mitgx"]
 [ext_resource type="Texture2D" uid="uid://du58w4w3535" path="res://Assets/Sprites/debris.png" id="9_gs2es"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="10_3817r"]
+[ext_resource type="AudioStream" uid="uid://chksdx54stcli" path="res://Assets/Music/mus_gameover.ogg" id="12_gs2es"]
 
 [sub_resource type="Animation" id="Animation_gjtdd"]
 resource_name = "Break"
@@ -214,6 +215,18 @@ tracks/16/path = NodePath("RichTextLabel2:visible")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("MusGameover:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -426,6 +439,18 @@ tracks/16/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("MusGameover:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3817r"]
 _data = {
@@ -507,3 +532,7 @@ offset_bottom = 97.0
 theme_override_fonts/normal_font = ExtResource("10_3817r")
 theme_override_font_sizes/normal_font_size = 48
 text = "GAME OVER"
+
+[node name="MusGameover" type="AudioStreamPlayer2D" parent="." unique_id=1984393297]
+position = Vector2(147, 188)
+stream = ExtResource("12_gs2es")

@@ -1,17 +1,102 @@
 [gd_scene format=3 uid="uid://tvydx1ub4xrx"]
 
-[ext_resource type="Script" uid="uid://c8h25xxntbc3h" path="res://survey_program.gd" id="1_re3vj"]
+[ext_resource type="Script" uid="uid://c8h25xxntbc3h" path="res://Scripts/survey_program.gd" id="1_re3vj"]
 [ext_resource type="PackedScene" uid="uid://btdfg1fqdrmh3" path="res://Scenes/Main.tscn" id="2_4r2l8"]
 [ext_resource type="PackedScene" uid="uid://bnn0j1wj3pb1m" path="res://Scenes/audio_handler.tscn" id="2_j4ylw"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="2_r3uro"]
-[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="5_j4ylw"]
-[ext_resource type="Script" uid="uid://1iwxsj2s0hx1" path="res://Scenes/naming_screen.gd" id="6_4r2l8"]
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="5_j4ylw"]
+[ext_resource type="Script" uid="uid://1iwxsj2s0hx1" path="res://Scripts/naming_screen.gd" id="6_4r2l8"]
 [ext_resource type="Texture2D" uid="uid://7r0hf6fpfreh" path="res://Assets/Sprites/WhiteTransition.png" id="6_vlqoj"]
 [ext_resource type="Texture2D" uid="uid://d1phpcd2f5dm3" path="res://Assets/Sprites/FRIH.png" id="7_mdy8p"]
 [ext_resource type="Texture2D" uid="uid://cgwve1akl0mo0" path="res://Assets/Sprites/Light.png" id="8_uauwt"]
 [ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="9_f2wtj"]
 [ext_resource type="AudioStream" uid="uid://8vujrci3v4cs" path="res://Assets/Sounds/snd_spearappear.wav" id="10_6xsjm"]
 [ext_resource type="AudioStream" uid="uid://dmm1t7ammabry" path="res://Assets/Sounds/snd_grab.wav" id="11_mdy8p"]
+
+[sub_resource type="Animation" id="Animation_amve1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Name:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(193.375, 81.545)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Name:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(204.42578, 28.125)]
+}
+
+[sub_resource type="Animation" id="Animation_rh703"]
+resource_name = "Shake"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Name:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(195.885, 78.14), Vector2(194.55, 77.375), Vector2(193.96, 77.18), Vector2(195.813, 77.225)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Name:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(204.42578, 28.125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_scy07"]
+_data = {
+&"RESET": SubResource("Animation_amve1"),
+&"Shake": SubResource("Animation_rh703")
+}
 
 [sub_resource type="Animation" id="Animation_6xsjm"]
 resource_name = "FriskAppear"
@@ -391,10 +476,10 @@ script = ExtResource("6_4r2l8")
 
 [node name="Name" type="RichTextLabel" parent="NamingScreen" unique_id=644911117]
 layout_mode = 0
-offset_left = 215.0
-offset_top = 67.0
-offset_right = 311.0
-offset_bottom = 107.0
+offset_left = 193.375
+offset_top = 81.545
+offset_right = 397.80078
+offset_bottom = 109.67
 theme_override_fonts/normal_font = ExtResource("2_r3uro")
 theme_override_font_sizes/normal_font_size = 32
 text = "CHARA"
@@ -712,6 +797,10 @@ theme_override_font_sizes/normal_font_size = 12
 text = "	Press Z To Add a Letter.
 	Press X To Remove a Letter.
 	Press C To Confirm Name."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NamingScreen" unique_id=1390118983]
+libraries/ = SubResource("AnimationLibrary_scy07")
+autoplay = &"Shake"
 
 [node name="Transition" type="AnimationPlayer" parent="." unique_id=1262109995]
 libraries/ = SubResource("AnimationLibrary_f2wtj")

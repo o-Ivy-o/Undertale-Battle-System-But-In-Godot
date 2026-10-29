@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://djquesnsypclm"]
 
 [ext_resource type="Script" uid="uid://dr2wm54wmtvfs" path="res://Scripts/battle_system.gd" id="1_gsykg"]
-[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="1_v0xf2"]
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="1_v0xf2"]
 [ext_resource type="Texture2D" uid="uid://tvs8hwlpbmdb" path="res://Assets/Sprites/UiButtons/FightButton1.png" id="2_01pil"]
 [ext_resource type="Texture2D" uid="uid://idyq8f6uq73f" path="res://Assets/Sprites/BattleBack.png" id="2_kapky"]
 [ext_resource type="Texture2D" uid="uid://digfwdrawb74r" path="res://Assets/Sprites/UiButtons/FightButton2.png" id="3_cwell"]
-[ext_resource type="Script" uid="uid://ddihpsw6g1jjj" path="res://Scenes/buttons.gd" id="3_fleh8"]
+[ext_resource type="Script" uid="uid://ddihpsw6g1jjj" path="res://Scripts/buttons.gd" id="3_fleh8"]
 [ext_resource type="Texture2D" uid="uid://wsxk5yx7m48a" path="res://Assets/Sprites/UiButtons/ActButton1.png" id="4_kapky"]
 [ext_resource type="Texture2D" uid="uid://gedgatljxwob" path="res://Assets/Sprites/UiButtons/ActButton2.png" id="5_mlbmr"]
 [ext_resource type="Texture2D" uid="uid://bu13eelacsman" path="res://Assets/Sprites/UiButtons/ItemButton1.png" id="6_qtphi"]
@@ -14,14 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://vsulj57cjsm6" path="res://Assets/Sprites/UiButtons/MercyButton2.png" id="9_gsykg"]
 [ext_resource type="Texture2D" uid="uid://dfq1h6iwfwxcy" path="res://Assets/Sprites/DialogueBox.png" id="11_mlbmr"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="12_mlbmr"]
-[ext_resource type="Script" uid="uid://dvyxab2clkc4i" path="res://Scenes/b_soul.gd" id="14_gsykg"]
+[ext_resource type="Script" uid="uid://dvyxab2clkc4i" path="res://Scripts/b_soul.gd" id="14_gsykg"]
 [ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="14_n0o2g"]
 [ext_resource type="Texture2D" uid="uid://4sw8ayssp3e2" path="res://Assets/Sprites/Blue.png" id="16_qpxiv"]
 [ext_resource type="Texture2D" uid="uid://cgjstbme2c7sc" path="res://Assets/Sprites/Bluehurt.png" id="17_e5ted"]
 [ext_resource type="Texture2D" uid="uid://c8m2scrjj15a5" path="res://Assets/Sprites/redhurt.png" id="17_j2wp6"]
-[ext_resource type="Script" uid="uid://cgfpmynhwboba" path="res://Scenes/bullets.gd" id="20_e5ted"]
-[ext_resource type="PackedScene" uid="uid://baqeva5lfidp2" path="res://Scripts/test_bullet.tscn" id="20_qpxiv"]
-[ext_resource type="Script" uid="uid://5xomfyh10p6o" path="res://Scenes/status_ui.gd" id="22_heo5b"]
+[ext_resource type="Script" uid="uid://cgfpmynhwboba" path="res://Scripts/bullets.gd" id="20_e5ted"]
+[ext_resource type="PackedScene" uid="uid://baqeva5lfidp2" path="res://Scenes/test_bullet.tscn" id="20_qpxiv"]
+[ext_resource type="Script" uid="uid://5xomfyh10p6o" path="res://Scripts/status_ui.gd" id="22_heo5b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
 animations = [{
@@ -685,7 +685,6 @@ wait_time = 0.05
 visible = false
 position = Vector2(33, 32)
 script = ExtResource("14_gsykg")
-hp = 3
 soulmode = 1
 metadata/_edit_group_ = true
 

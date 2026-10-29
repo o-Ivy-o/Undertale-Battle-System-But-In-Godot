@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://baqeva5lfidp2"]
 
-[ext_resource type="Script" uid="uid://cnp2vfpe7vv70" path="res://test_bullet.gd" id="1_euuuc"]
+[ext_resource type="Script" uid="uid://cnp2vfpe7vv70" path="res://Scripts/test_bullet.gd" id="1_euuuc"]
 [ext_resource type="Texture2D" uid="uid://mkqo33t4fkfy" path="res://Assets/Sprites/Pellet.png" id="2_euuuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qrxg"]

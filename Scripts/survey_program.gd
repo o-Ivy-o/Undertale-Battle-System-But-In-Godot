@@ -30,7 +30,7 @@ func nextpage():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	dialogue = ["       Hello Player.\n      Before we Begin.","  Please name the fallen\n          Human.","         Perfect.","      We Called Them:\n           "+nametxt.text,"   Excellent we shall now
-		   BEGIN"]
+		   Begin."]
 	mxtxtp = dialogue.size() -1
 	if Input.is_action_just_pressed("Accept"):
 		if $Text.visible_ratio >= 1  and caninteract and curtxtp < mxtxtp and curtxtp != 1:

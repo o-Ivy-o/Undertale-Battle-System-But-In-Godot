@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccqih6e0feafs"]
 
-[ext_resource type="Script" uid="uid://cbrkhgx3s5jub" path="res://Scenes/quit_game.gd" id="1_2olmt"]
-[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://UI/Border.tscn" id="2_57fjq"]
+[ext_resource type="Script" uid="uid://cbrkhgx3s5jub" path="res://Scripts/quit_game.gd" id="1_2olmt"]
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="2_57fjq"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="3_m7kn2"]
 
 [sub_resource type="Animation" id="Animation_2olmt"]

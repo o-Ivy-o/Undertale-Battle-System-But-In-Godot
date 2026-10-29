@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btdfg1fqdrmh3"]
 
 [ext_resource type="AudioStream" uid="uid://6ybynma66tq8" path="res://Assets/Music/inukuma_wip.ogg" id="1_idj7w"]
-[ext_resource type="PackedScene" uid="uid://c8h6dyrsw5sp2" path="res://UI/Main Menu.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://c8h6dyrsw5sp2" path="res://Scenes/Main Menu.tscn" id="1_r150o"]
 [ext_resource type="Script" uid="uid://ciokn6gmg35sa" path="res://Scripts/dog.gd" id="2_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bf1tc4spyoab2" path="res://Assets/Sprites/dogbody.png" id="3_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://coah6cr143yaa" path="res://Assets/Sprites/doghead.png" id="4_v1gob"]

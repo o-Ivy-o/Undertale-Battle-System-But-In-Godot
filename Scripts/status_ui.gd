@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$PLRHP.text = str($"../BHellBox/BSoul".hp)+"/"+str(20)
+	$PLRHP.text = str($"../BHellBox/BSoul".hp)+"/"+str(Stats.maxhp.get(Global.PlayerLove-1))

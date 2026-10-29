@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cawopmjfvnp1j" path="res://Assets/Borders/Snowdin.png" id="3_146yj"]
 [ext_resource type="Texture2D" uid="uid://pnhs4b75l5np" path="res://Assets/Borders/Waterfall.png" id="4_08uxl"]
 [ext_resource type="Texture2D" uid="uid://duvi3g4yybj5p" path="res://Assets/Borders/Hotland.png" id="5_jmgox"]
+[ext_resource type="Texture2D" uid="uid://cfixbv61j4f2n" path="res://Assets/Borders/True Lab.png" id="7_exnfb"]
 [ext_resource type="Texture2D" uid="uid://lyyo8hnqq4p3" path="res://Assets/Borders/Special3.png" id="7_x54fy"]
 [ext_resource type="Texture2D" uid="uid://bp8vgu2myrt8x" path="res://Assets/Borders/Special1.png" id="8_7x02v"]
 [ext_resource type="Texture2D" uid="uid://c6byneoa6trq3" path="res://Assets/Borders/Special2.png" id="9_hhbqk"]
@@ -48,6 +49,13 @@ position = Vector2(240, 135)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_jmgox")
 metadata/BorderName = "Hotland"
+
+[node name="TrueLab" type="Sprite2D" parent="." unique_id=690586609]
+visible = false
+position = Vector2(240, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_exnfb")
+metadata/BorderName = "True Lab"
 
 [node name="Dog" type="Sprite2D" parent="." unique_id=907057208]
 visible = false
