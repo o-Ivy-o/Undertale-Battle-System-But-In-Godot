@@ -1,0 +1,582 @@
+[gd_scene format=3 uid="uid://ckanv0j8fvp0c"]
+
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="1_duh1u"]
+[ext_resource type="Script" uid="uid://br00i68166ct0" path="res://Scripts/intro.gd" id="1_et3xt"]
+[ext_resource type="Texture2D" uid="uid://c7mpxscg223xc" path="res://Assets/Sprites/Introx1.png" id="2_alxvg"]
+[ext_resource type="Texture2D" uid="uid://cl3ovycm4rvgu" path="res://Assets/Sprites/Introx2.png" id="3_pgam6"]
+[ext_resource type="Texture2D" uid="uid://dlxyl66cunrhm" path="res://Assets/Sprites/Introx3.png" id="4_itfcf"]
+[ext_resource type="Texture2D" uid="uid://30kyie5o5sv1" path="res://Assets/Sprites/Introx4.png" id="5_g8dlr"]
+[ext_resource type="Texture2D" uid="uid://exgpm2d1obg7" path="res://Assets/Sprites/Introx5.png" id="6_33jql"]
+[ext_resource type="Texture2D" uid="uid://b85ca3aw1n8m7" path="res://Assets/Sprites/Introx6.png" id="7_iab25"]
+[ext_resource type="Texture2D" uid="uid://bsc628a2qw8qa" path="res://Assets/Sprites/Introx7.png" id="8_b6uv1"]
+[ext_resource type="Texture2D" uid="uid://jg16vvsmvgd4" path="res://Assets/Sprites/Introx8.png" id="9_et3xt"]
+[ext_resource type="Texture2D" uid="uid://dbrfwnub1l8nb" path="res://Assets/Sprites/Introx9.png" id="10_jfi4t"]
+[ext_resource type="Texture2D" uid="uid://d1qk6lvaligoa" path="res://Assets/Sprites/Introx10.png" id="11_odey0"]
+[ext_resource type="Texture2D" uid="uid://d36tnsmkhi738" path="res://Assets/Sprites/Introx12.png" id="12_yny27"]
+[ext_resource type="Texture2D" uid="uid://bq38pyoddh1dy" path="res://Assets/Sprites/scroll.png" id="13_iab25"]
+[ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="13_itfcf"]
+[ext_resource type="Texture2D" uid="uid://fjf48sgjr8pu" path="res://Assets/Sprites/empty.png" id="14_b6uv1"]
+[ext_resource type="AudioStream" uid="uid://bepo51vjnywoq" path="res://Assets/Music/mus_story.ogg" id="14_g8dlr"]
+[ext_resource type="AudioStream" uid="uid://bbbjeeki8hc2b" path="res://Assets/Sounds/mus_intronoise.ogg" id="15_b6uv1"]
+
+[sub_resource type="Animation" id="Animation_g8dlr"]
+resource_name = "Intro"
+length = 83.0
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Images/Introx1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6, 12, 18, 23, 28, 34),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Long ago, two races ruled over Earth:
+HUMANS and MONSTERS.", "One day, war broke out between the two races.", "After a long battle, the humans were 
+victorious.", "They sealed the monsters
+underground with a magic
+spell.", "Many years later...", "       MT. EBOTT
+          201X", "Legends say that those
+who climb that mountain
+never return."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible_characters")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4, 5.99, 6, 9, 11.99, 12, 16, 17.99, 18, 22, 22.99, 23, 27, 27.99, 28, 30, 33.99, 34, 37, 40.99, 41),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 2,
+"values": [4, 58, 58, 0, 45, 45, 0, 50, 50, 0, 56, 56, 0, 19, 19, 0, 34, 34, 0, 60, 60, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Images/Introx2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Images/Introx3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12, 18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Images/Introx4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 18, 22.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Images/Introx5:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 22.99, 29),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Images/Introx6:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 28, 33.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Images/Introx7:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 33.99, 40.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Images/Introx8:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 40.99, 46),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Images/Introx9:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 46, 52),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Images/Introx10:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 52, 58),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Images/Introx12:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Images/Empty:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(58, 77, 83),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Images/Scroll:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(58, 77, 83),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Images/Scroll:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(58.033333, 63, 71.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(160, -36.97), Vector2(160, -36.97), Vector2(160, 203)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Images/MusIntronoise:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("MusStory:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 76.925476),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_33jql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Images/Introx1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Long ago, two races rules over Earth:
+HUMANS and MONSTERS."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible_characters")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Images/Introx2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Images/Introx3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Images/Introx4:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Images/Introx5:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Images/Introx6:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Images/Introx7:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Images/Introx8:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Images/Introx9:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Images/Introx10:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Images/Introx12:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Images/Empty:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Images/Scroll:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Images/Scroll:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, -36.97)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = false
+tracks/16/path = NodePath("Images/MusIntronoise:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = false
+tracks/17/path = NodePath("MusStory:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iab25"]
+_data = {
+&"Intro": SubResource("Animation_g8dlr"),
+&"RESET": SubResource("Animation_33jql")
+}
+
+[node name="Intro" type="Control" unique_id=1789258589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_et3xt")
+
+[node name="Control" parent="." unique_id=2123590375 instance=ExtResource("1_duh1u")]
+
+[node name="Images" type="Control" parent="." unique_id=1028345490]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 15.0
+offset_right = 400.0
+offset_bottom = 256.0
+
+[node name="Introx1" type="Sprite2D" parent="Images" unique_id=43475923]
+position = Vector2(160, 120)
+texture = ExtResource("2_alxvg")
+
+[node name="Introx2" type="Sprite2D" parent="Images" unique_id=555441719]
+position = Vector2(160, 120)
+texture = ExtResource("3_pgam6")
+
+[node name="Introx3" type="Sprite2D" parent="Images" unique_id=1847617639]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("4_itfcf")
+
+[node name="Introx4" type="Sprite2D" parent="Images" unique_id=1538624431]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("5_g8dlr")
+
+[node name="Introx5" type="Sprite2D" parent="Images" unique_id=115936728]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("6_33jql")
+
+[node name="Introx6" type="Sprite2D" parent="Images" unique_id=1081629454]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("7_iab25")
+
+[node name="Introx7" type="Sprite2D" parent="Images" unique_id=276243161]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("8_b6uv1")
+
+[node name="Introx8" type="Sprite2D" parent="Images" unique_id=483387530]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("9_et3xt")
+
+[node name="Introx9" type="Sprite2D" parent="Images" unique_id=204185729]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("10_jfi4t")
+
+[node name="Introx10" type="Sprite2D" parent="Images" unique_id=470781367]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("11_odey0")
+
+[node name="Introx12" type="Sprite2D" parent="Images" unique_id=1634744925]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("12_yny27")
+
+[node name="Scroll" type="Sprite2D" parent="Images" unique_id=111607110]
+visible = false
+position = Vector2(160, -36.97)
+texture = ExtResource("13_iab25")
+
+[node name="Empty" type="Sprite2D" parent="Images" unique_id=1838304980]
+visible = false
+position = Vector2(160, 120)
+texture = ExtResource("14_b6uv1")
+
+[node name="MusIntronoise" type="AudioStreamPlayer2D" parent="Images" unique_id=445048612]
+position = Vector2(151, 138)
+stream = ExtResource("15_b6uv1")
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=308591620]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 173.0
+offset_right = 340.0
+offset_bottom = 252.0
+theme_override_fonts/normal_font = ExtResource("13_itfcf")
+text = "Long ago, two races rules over Earth:
+HUMANS and MONSTERS."
+visible_characters = 4
+visible_ratio = 0.06896552
+
+[node name="Intro" type="AnimationPlayer" parent="." unique_id=1518815678]
+libraries/ = SubResource("AnimationLibrary_iab25")
+autoplay = &"Intro"
+
+[node name="MusStory" type="AudioStreamPlayer2D" parent="." unique_id=1581501147]
+position = Vector2(240, 125)
+stream = ExtResource("14_g8dlr")
+pitch_scale = 0.9
+
+[connection signal="animation_finished" from="Intro" to="." method="_on_intro_animation_finished"]

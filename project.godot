@@ -15,11 +15,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Undertale Battle System"
-run/main_scene="uid://tvydx1ub4xrx"
+run/main_scene="uid://ckanv0j8fvp0c"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=30
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
+boot_splash/image="/home/ivy/Downloads/3b9be7e15b46c42911f39a4a9e861022.ico"
+config/icon="/home/ivy/Downloads/532eaf5ba1172f05b978d00a319b1899.png"
+config/macos_native_icon="/home/ivy/Downloads/3b9be7e15b46c42911f39a4a9e861022.ico"
+config/windows_native_icon="/home/ivy/Downloads/3b9be7e15b46c42911f39a4a9e861022.ico"
 
 [autoload]
 
