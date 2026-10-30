@@ -29,11 +29,20 @@ func _process(_delta: float) -> void:
 		"MERCY":
 			$IDK.text = "  That's a little on-the-nose" 
 		"GASTER":
+			AudioHandler.audio_anotherhim.stop()
 			get_tree().change_scene_to_file("res://Scenes/intro.tscn")
 		"ALPHYS": 
 			$IDK.text = "        D-don't do that."
 		"SANS":
 			$IDK.text = "            nope."
+		"JARONA":
+			$IDK.text = "    Heh their eating my flesh!"
+		"KRIS":
+			$IDK.text = "      What a coincidence."
+		"FLOWEY":
+			$IDK.text = "    I ALREADY CHOSE THAT NAME!"
+		"IVY":
+			$IDK.text = "    Hi Ivy, im also Ivy"
 	for i in Letters:
 		i.modulate = Color(Color.WHITE)
 		
@@ -48,32 +57,32 @@ func _process(_delta: float) -> void:
 			0:
 				if lidx < 13:
 					lidx += 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
 					lidx = 0
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 			1:
 				if lidx < Letters.size()-1:
 					lidx += 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
 					lidx = 14
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 	elif Input.is_action_just_pressed("Left") and cmi:
 		match lidy:
 			0:
 				if lidx > 0:
 					lidx -= 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 					lidx = 13
 			1:
 				if lidx > 14:
 					lidx -= 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 					lidx = 25
 	elif Input.is_action_just_pressed("Down") and cmi:
 		if lidy < 1:
@@ -105,9 +114,9 @@ func _process(_delta: float) -> void:
 					lidx = 25
 				_:
 					lidx = 14
-			$"../AudioHandler/Sounds/SndMenumove".play()
+			AudioHandler.snd_menumove.play()
 		else:
-			$"../AudioHandler/Sounds/SndCantselect".play()
+			AudioHandler.snd_cantselect.play()
 	elif Input.is_action_just_pressed("Up") and cmi:
 		
 		if lidy == 1:
@@ -139,20 +148,20 @@ func _process(_delta: float) -> void:
 					lidx = 14
 				_:
 					lidx = 0
-			$"../AudioHandler/Sounds/SndMenumove".play()
+			AudioHandler.snd_menumove.play()
 		else:
-			$"../AudioHandler/Sounds/SndCantselect".play()
+			AudioHandler.snd_cantselect.play()
 	elif Input.is_action_just_pressed("Accept") and cmi:
 		var Name = $Name.text
 		var chars = $Name.get_total_character_count()
 		if chars < 6:
 			Name = Name + slctl.text
 			$Name.text = Name
-			$"../AudioHandler/Sounds/SndSelect".play()
+			AudioHandler.snd_select.play()
 		else:
 			name = name.substr(0,5) + slctl.text
 			$Name.text = Name
-			$"../AudioHandler/Sounds/SndSelect".play()
+			AudioHandler.snd_select.play()
 	elif Input.is_action_just_pressed("Back") and cmi:
 		var Name = $Name.text
 		var chars = $Name.get_total_character_count()
@@ -174,6 +183,6 @@ func _process(_delta: float) -> void:
 			Global.SetName = true
 			$".".visible = false
 		else:
-			$"../AudioHandler/Sounds/SndCantselect".play()
+			AudioHandler.snd_cantselect.play()
 		
 		

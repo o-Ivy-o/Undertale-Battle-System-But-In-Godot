@@ -1,6 +1,5 @@
 extends Control
 
-@onready var audio_handler: Node2D = $AudioHandler
 @onready var nametxt = $NamingScreen/Name
 var dialogue : Array
 var curtxtp = 0
@@ -14,10 +13,9 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 		caninteract = false
 	else:
-		#audio_handler.Music.AudioAnotherhim.play()
-		dialogue = ["       Hello Player.\n      Before we Begin.","  Please name the fallen\n          Human.","         Perfect.","      We Called Them:\n           "+nametxt.text      ]
+		dialogue = ["       Hello Player.\n      Before we Begin.","  Please name the fallen\n          Human.","         . . .","      We Called Them:\n           "+nametxt.text      ]
 		
-		$AudioHandler/Music/AudioAnotherhim.play()
+		AudioHandler.audio_anotherhim.play()
 		$Text.text = dialogue[curtxtp]
 		$Text.visible_characters = 0
 		$Type.start()
@@ -29,7 +27,7 @@ func nextpage():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	dialogue = ["       Hello Player.\n      Before we Begin.","  Please name the fallen\n          Human.","         Perfect.","      We Called Them:\n           "+nametxt.text,"   Excellent we shall now
+	dialogue = ["       Hello Player.\n      Before we Begin.","  Please name the fallen\n          Human.","           . . .","      We Called Them:\n           "+nametxt.text,"       We shall now
 		   Begin."]
 	mxtxtp = dialogue.size() -1
 	if Input.is_action_just_pressed("Accept"):
@@ -56,28 +54,17 @@ func _on_type_timeout() -> void:
 		
 	if $Text.visible_characters < totalchar:
 		$Text.visible_characters += 1
-		$AudioHandler/Sounds/SndTxtivy.pitch_scale = randf_range(0.85, 1.15)
-		$AudioHandler/Sounds/SndTxtivy.play()
+		AudioHandler.snd_txtivy.pitch_scale = randf_range(0.85, 1.15)
+		AudioHandler.snd_txtivy.play()
 		
 	if $Text.visible_characters >= totalchar:
 		$Type.stop()
 
-
-func gomenu():
-	$AudioHandler/Music/AudioAnotherhim.stop()
-	var main_menu = mainscene.instantiate()
-	add_child(main_menu)
-	$Text.visible = false
-	#$NamingScreen.visible = false
-	$WhiteTransition.visible = false
-	$Light.visible = false
-	$Soul.visible = false
-
 func _on_transition_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Transition":
 		$Transition.stop()
-		#gomenu()
 		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+		AudioHandler.audio_anotherhim.stop()
 		SaveManager.save()
 	elif anim_name == "FriskAppear" and curtxtp == 1:
 		$Transition.play("FriskIdle")
