@@ -7,6 +7,16 @@ var adjst = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Quit") and cmi:
+		Global.MusicVol = 1.0
+		Global.border = 0
+		Global.BattleTheme = 0
+		Global.PlayerName = "GASTER"
+		Global.SetName = false
+		AudioHandler.settingsmenu.stop()
+		await get_tree().create_timer(.1).timeout
+		get_tree().change_scene_to_file("res://Scenes/intro.tscn")
+		SaveManager.save()
 	$Exit.label_settings.font_color = Color(Color.WHITE)
 	$MusicVol.label_settings.font_color = Color(Color.WHITE)
 	$Border.label_settings.font_color = Color(Color.WHITE)
@@ -16,10 +26,14 @@ func _process(_delta: float) -> void:
 	$Border.text = "Border: " + str(Global.BorderName)
 	$BattleSong.text = "Battle Theme: " + str(Global.BattleThemeName)
 	$LOVE.text = "LOVE: " + str(Global.PlayerLove)
-	$AliceCredit.visible = false
+	$Credit.visible = false
 	if Global.BattleTheme == 2:
-		$AliceCredit.visible = true
-	
+		$Credit.visible = true
+		$Credit.text = "* Polite Buster by Alice:
+https://soundcloud.com/aarctoid"
+	elif Global.BattleTheme == 1:
+		$Credit.visible = true
+		$Credit.text = "* Enemy Imminent by Maisy"
 	if Input.is_action_just_pressed("Down") and cmi and index != maxindex:
 		index += 1
 		

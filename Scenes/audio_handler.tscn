@@ -23,10 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://cgrdf2wdyoysd" path="res://Assets/Music/mus_options_fall.ogg" id="19_1mp5a"]
 [ext_resource type="AudioStream" uid="uid://bhoe6qcidrw1x" path="res://Assets/Music/mus_options_summer.ogg" id="20_k8afl"]
 [ext_resource type="AudioStream" uid="uid://0w523frmy0vb" path="res://Assets/Music/mus_options_winter.ogg" id="21_1sj3s"]
-[ext_resource type="AudioStream" uid="uid://bwdqpmg3eed62" path="res://Assets/Music/battle.ogg" id="22_hfile"]
 [ext_resource type="AudioStream" uid="uid://dobn1a43ogjmv" path="res://Assets/Music/mus_battle1.ogg" id="23_6odp6"]
 [ext_resource type="AudioStream" uid="uid://dve555j3skw3v" path="res://Assets/Music/RUDEBUSTER.ogg" id="24_yjp8e"]
-[ext_resource type="AudioStream" uid="uid://bnvcl480oujf4" path="res://Assets/Music/FreedomBreaker.ogg" id="27_lq6ld"]
+[ext_resource type="AudioStream" uid="uid://cg3egb4ah8elj" path="res://Assets/Music/enemygodotundertale.ogg" id="25_yjp8e"]
 
 [node name="AudioHandler" type="Node2D" unique_id=2107132292]
 script = ExtResource("1_6y3po")
@@ -124,14 +123,10 @@ stream = ExtResource("18_0gbaw")
 stream = ExtResource("23_6odp6")
 metadata/ThemeName = "Enemy Approach"
 
-[node name="Battle" type="AudioStreamPlayer" parent="BattleThemes" unique_id=2031162537]
-stream = ExtResource("22_hfile")
-metadata/ThemeName = "Rude Buster"
+[node name="Enemygodotundertale" type="AudioStreamPlayer" parent="BattleThemes" unique_id=1214854701]
+stream = ExtResource("25_yjp8e")
+metadata/ThemeName = "Enemy Imminent"
 
 [node name="Polite Buster by Alice" type="AudioStreamPlayer" parent="BattleThemes" unique_id=57273300]
 stream = ExtResource("24_yjp8e")
 metadata/ThemeName = "Polite Buster"
-
-[node name="FreedomBreaker" type="AudioStreamPlayer" parent="BattleThemes" unique_id=107383649]
-stream = ExtResource("27_lq6ld")
-metadata/ThemeName = "Freedom Breakr"

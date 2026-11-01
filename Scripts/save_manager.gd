@@ -18,8 +18,8 @@ func _process(_delta: float) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_save()
 	print("attempting to load")
+	load_save()
 
 
 
@@ -36,11 +36,10 @@ func save():
 	var save = FileAccess.open(savepath,FileAccess.WRITE)
 	save.store_var(settings)
 	save.close()
-	print("saved")
+	print(settings)
 
 func load_save():
 	if FileAccess.file_exists(savepath):
-		print("filefound")
 		var save = FileAccess.open(savepath,FileAccess.READ)
 		var loadedsettings = save.get_var()
 		save.close()
@@ -58,6 +57,6 @@ func load_save():
 		Global.BattleTheme = loadedsettings.Theme
 		Global.PlayerName = loadedsettings.Name
 		Global.SetName = loadedsettings.SkipIntro
-		print("loaded")
+		print(loadedsettings)
 	else:
 		print("nosave")

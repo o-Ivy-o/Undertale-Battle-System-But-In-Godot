@@ -29,8 +29,10 @@ func _process(_delta: float) -> void:
 		"MERCY":
 			$IDK.text = "  That's a little on-the-nose" 
 		"GASTER":
-			AudioHandler.audio_anotherhim.stop()
-			get_tree().change_scene_to_file("res://Scenes/intro.tscn")
+			if cmi:
+				Global.PlayerName = "CHARA"
+				AudioHandler.audio_anotherhim.stop()
+				get_tree().change_scene_to_file("res://Scenes/intro.tscn")
 		"ALPHYS": 
 			$IDK.text = "        D-don't do that."
 		"SANS":
@@ -171,6 +173,7 @@ func _process(_delta: float) -> void:
 			$Name.text = Name
 	elif Input.is_action_just_pressed("ConfirmName") and cmi:
 		if $Name.text not in ["","GASTER","ALPHYS","ASGORE","UNDYNE","SANS","TORIEL","FLOWEY","ASRIEL"]:
+			
 			$"../Soul".position = Vector2(239.96,202.88)
 			$"../Soul".scale = Vector2(.75,.75)
 			cmi = false
@@ -182,6 +185,8 @@ func _process(_delta: float) -> void:
 			Global.PlayerName = $Name.text
 			Global.SetName = true
 			$".".visible = false
+			await get_tree().create_timer(.1).timeout
+			SaveManager.save()
 		else:
 			AudioHandler.snd_cantselect.play()
 		

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bxpe82cfwad6a" path="res://Scripts/main_menu.gd" id="1_ugbd5"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="2_owi87"]
 [ext_resource type="FontFile" uid="uid://bcrxhig5scr35" path="res://Assets/Fonts/DeterminationSansWebRegular-369X.ttf" id="2_ugbd5"]
+[ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="6_4lp62"]
 [ext_resource type="Texture2D" uid="uid://dld152l58et2c" path="res://Assets/Sprites/mewtree.png" id="8_745pv"]
 [ext_resource type="Texture2D" uid="uid://cb7ftjtqc5dqx" path="res://Assets/Sprites/Flowery.png" id="8_drj1j"]
 [ext_resource type="Script" uid="uid://daevc0byf8i65" path="res://Scripts/settings_menu.gd" id="8_rovg4"]
@@ -173,8 +174,22 @@ theme_override_colors/default_color = Color(1, 1, 1, 0.5137255)
 theme_override_fonts/normal_font = ExtResource("2_owi87")
 text = "Take your time"
 
-[node name="AliceCredit" type="RichTextLabel" parent="Settings Menu" unique_id=1959465698]
-visible = false
+[node name="HINT" type="RichTextLabel" parent="Settings Menu" unique_id=376024828]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 15.0
+offset_right = 408.19904
+offset_bottom = 126.306625
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_owi87")
+theme_override_font_sizes/normal_font_size = 12
+text = "Press ESC
+To
+DELETE 
+ALL
+DATA"
+
+[node name="Credit" type="RichTextLabel" parent="Settings Menu" unique_id=1959465698]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 196.0
@@ -246,3 +261,5 @@ label_settings = SubResource("LabelSettings_khn32")
 visible = false
 position = Vector2(103, 227)
 texture = ExtResource("8_drj1j")
+
+[node name="Control" parent="." unique_id=2123590375 instance=ExtResource("6_4lp62")]
