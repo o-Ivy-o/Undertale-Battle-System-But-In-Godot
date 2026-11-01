@@ -28,6 +28,26 @@ extends Node
 @onready var mus_battle_1: AudioStreamPlayer = $BattleThemes/MusBattle1
 @onready var polite_buster_by_alice: AudioStreamPlayer = $"BattleThemes/Polite Buster by Alice"
 @onready var freedom_breaker: AudioStreamPlayer = $BattleThemes/FreedomBreaker
+@onready var settingsmenu : AudioStreamPlayer
+var time = Time.get_datetime_dict_from_system()
+var mnth = time["month"]
+
+func _ready() -> void:
+	checktime()
+
+func checktime():
+	time = Time.get_datetime_dict_from_system()
+	mnth = time["month"]
+	
+	match mnth:
+		3,4,5,9,10: #fall
+			settingsmenu = $Music/MusOptionsFall
+		6,7,8: #summer
+			settingsmenu = $Music/MusOptionsSummer
+		11,12,1,2: #winter
+			settingsmenu = $Music/MusOptionsWinter
+	
+	#print(mnth)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

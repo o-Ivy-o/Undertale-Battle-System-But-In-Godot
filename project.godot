@@ -32,6 +32,8 @@ Border="*uid://ct7163kke0s6c"
 SaveManager="*uid://kofpwo51bun7"
 AudioHandler="*uid://bnn0j1wj3pb1m"
 Stats="*uid://dhwjispevlqq4"
+Clock="*uid://beee8rhcdvuuo"
+QuitGame="*uid://ccqih6e0feafs"
 
 [display]
 

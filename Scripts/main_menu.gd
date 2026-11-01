@@ -4,14 +4,12 @@ var meni : int = 0
 var hi : int = 2
 var li : int = 0
 var cnmi : bool = true
-@onready var MenuTheme = $AudioHandler/Music/Menu
-@onready var SettingsTheme = $AudioHandler/Music/MusOptionsFall
 #@export var BattleSystem : PackedScene
 
 #when scene gets created
 func _ready() -> void:
 	$LOADING.visible = false
-	MenuTheme.play()
+	AudioHandler.menu.play()
 	showmenu()
 
 
@@ -20,35 +18,40 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Down"):
 		if meni != hi and cnmi:
 			meni += 1
-			$AudioHandler/Sounds/SndMenumove.play()
-			print(meni)
+			
+			AudioHandler.snd_menumove.play()
+			#print(meni)
 	elif Input.is_action_just_pressed("Up"):
 		if meni != li and cnmi:
 			meni -= 1
-			$AudioHandler/Sounds/SndMenumove.play()
-			print(meni)
+			AudioHandler.snd_menumove.play()
+			#print(meni)
 	if Input.is_action_just_pressed("Accept") and cnmi:
 		match meni:
 			0:
-				$AudioHandler/Sounds/SndCantselect.play()
-				print("not starting battle")
-				#$"../DogCheck/InukumaWip".play()
-				#$"../DogCheck".show()
+				AudioHandler.menu.stop()
+				AudioHandler.snd_select.play()
+				#print("not starting battle")
+				$"../DogCheck/InukumaWip".play()
+				$"../DogCheck".show()
+				$".".hide()
 				cnmi = false
-				get_tree().change_scene_to_file("res://Scenes/battle_system.tscn")
+				if OS.is_debug_build():
+					get_tree().change_scene_to_file("res://Scenes/battle_system.tscn")
 			1:
-				$AudioHandler/Sounds/SndSelect.play()
+				AudioHandler.snd_select.play()
 				hidemenu()
 				showsettings()
-				MenuTheme.stream_paused = true
-				SettingsTheme.play()
-				print("opening settings")
+				AudioHandler.checktime()
+				AudioHandler.menu.stream_paused = true
+				AudioHandler.settingsmenu.play()
+				#print("opening settings")
 				cnmi = false
 			2:
-				$AudioHandler/Sounds/SndSelect.play()
+				AudioHandler.snd_select.play()
 				cnmi = false
-				await $AudioHandler/Sounds/SndSelect.finished
-				print("closing game")
+				await AudioHandler.snd_select.finished
+				#print("closing game")
 				get_tree().quit()
 	#show selection for main menu
 	match meni:

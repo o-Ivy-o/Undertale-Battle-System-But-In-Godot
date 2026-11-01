@@ -1,7 +1,7 @@
 extends Control
 
-var meni = 0
-const maxmeni = 3
+var index = 0
+const maxindex = 4
 @export var cmi : bool
 var adjst = false
 
@@ -11,90 +11,95 @@ func _process(_delta: float) -> void:
 	$MusicVol.label_settings.font_color = Color(Color.WHITE)
 	$Border.label_settings.font_color = Color(Color.WHITE)
 	$BattleSong.label_settings.font_color = Color(Color.WHITE)
+	$LOVE.label_settings.font_color = Color(Color.WHITE)
 	$MusicVol.text = "Master Volume: " + str(Global.MusicVol)
 	$Border.text = "Border: " + str(Global.BorderName)
 	$BattleSong.text = "Battle Theme: " + str(Global.BattleThemeName)
+	$LOVE.text = "LOVE: " + str(Global.PlayerLove)
 	$AliceCredit.visible = false
 	if Global.BattleTheme == 2:
 		$AliceCredit.visible = true
 	
-	if Input.is_action_just_pressed("Down") and cmi and meni != maxmeni:
-		meni += 1
-		$"../AudioHandler/Sounds/SndMenumove".play()
-		print(meni)
-	elif Input.is_action_just_pressed("Up") and cmi and meni != 0:
-		meni -= 1
-		$"../AudioHandler/Sounds/SndMenumove".play()
-		print(meni)
-	elif Input.is_action_just_pressed("Accept") and cmi:
-		match meni:
-			0:
-				SaveManager.save()
-				cmi = false
-				$"../AudioHandler/Sounds/SndSelect".play()
-				hide()
-				$"../Main Menu".show()
-				$"..".cnmi = true
-				$"../AudioHandler/Music/MusOptionsFall".stop()
-				$"../AudioHandler/Music/Menu".stream_paused = false
-			1:
-				$"../AudioHandler/Sounds/SndSelect".play()
-				cmi = false
-				adjst = true
-			2:
-				$"../AudioHandler/Sounds/SndSelect".play()
-				cmi = false
-				adjst = true
-			3:
-				$"../AudioHandler/Sounds/SndSelect".play()
-				cmi = false
-				adjst = true
-	elif Input.is_action_just_pressed("Left") and adjst:
+	if Input.is_action_just_pressed("Down") and cmi and index != maxindex:
+		index += 1
 		
-		match meni:
+		AudioHandler.snd_menumove.play()
+		#print(index)
+	elif Input.is_action_just_pressed("Up") and cmi and index != 0:
+		index -= 1
+		AudioHandler.snd_menumove.play()
+		#print(index)
+	elif Input.is_action_just_pressed("Accept") and cmi:
+		if index > 0:
+			AudioHandler.snd_select.play()
+			cmi = false
+			adjst = true
+		else:
+			SaveManager.save()
+			cmi = false
+			AudioHandler.snd_select.play()
+			hide()
+			$"../Main Menu".show()
+			$"..".cnmi = true
+			AudioHandler.settingsmenu.stop()
+			AudioHandler.menu.stream_paused = false
+	elif Input.is_action_just_pressed("Left") and adjst:
+		match index:
 			1:
 				if Global.border != 0:
 					Global.border -= 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndCantselect".play()
+					AudioHandler.snd_cantselect.play()
 			2:
 				if Global.MusicVol > 0.1:
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 					Global.MusicVol -= .1
 				else:
-					$"../AudioHandler/Sounds/SndCantselect".play()
+					AudioHandler.snd_cantselect.play()
 			3:
 				if Global.BattleTheme > 0:
 					Global.BattleTheme -= 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndCantselect".play()
+					AudioHandler.snd_cantselect.play()
+			4:
+				if Global.PlayerLove > 0:
+					Global.PlayerLove -= 1
+					AudioHandler.snd_menumove.play()
+				else:
+					AudioHandler.snd_cantselect.play()
 	elif Input.is_action_just_pressed("Right") and adjst:
-		match meni:
+		match index:
 			1:
 				if Global.border < Global.GlobalMaxBorder:
 					Global.border += 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndCantselect".play()
+					AudioHandler.snd_cantselect.play()
 			2:
 				if Global.MusicVol < 2:
 					Global.MusicVol += .1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndCantselect".play()
+					AudioHandler.snd_cantselect.play()
 			3:
 				if Global.BattleTheme < Global.MaxBattleTheme:
 					Global.BattleTheme += 1
-					$"../AudioHandler/Sounds/SndMenumove".play()
+					AudioHandler.snd_menumove.play()
 				else:
-					$"../AudioHandler/Sounds/SndCantselect".play()
+					AudioHandler.snd_cantselect.play()
+			4:
+				if Global.PlayerLove < 20:
+					Global.PlayerLove += 1
+					AudioHandler.snd_menumove.play()
+				else:
+					AudioHandler.snd_cantselect.play()
 	elif Input.is_action_just_pressed("Back") and adjst:
 		adjst = false
 		cmi = true
 		
-	match meni:
+	match index:
 		0:
 			$Exit.label_settings.font_color = Color(Color.YELLOW)
 		1:
@@ -103,4 +108,5 @@ func _process(_delta: float) -> void:
 			$MusicVol.label_settings.font_color = Color(Color.YELLOW)
 		3:
 			$BattleSong.label_settings.font_color = Color(Color.YELLOW)
-			
+		4:
+			$LOVE.label_settings.font_color = Color(Color.YELLOW)

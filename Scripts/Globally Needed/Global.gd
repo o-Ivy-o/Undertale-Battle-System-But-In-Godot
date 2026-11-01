@@ -13,7 +13,6 @@ var PlayerLove : int = 1
 var SetName : bool = false
 
 
-
 func _ready() -> void:
 	var screensize = DisplayServer.window_get_size()
 	DisplayServer.window_set_size(Vector2(screensize.x * 3.5,screensize.y * 3.5))

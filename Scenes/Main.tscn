@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://ciokn6gmg35sa" path="res://Scripts/dog.gd" id="2_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://bf1tc4spyoab2" path="res://Assets/Sprites/dogbody.png" id="3_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://coah6cr143yaa" path="res://Assets/Sprites/doghead.png" id="4_v1gob"]
-[ext_resource type="PackedScene" uid="uid://ccqih6e0feafs" path="res://Scenes/QuitGame.tscn" id="7_50glp"]
+[ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="6_v1gob"]
 
 [sub_resource type="Animation" id="Animation_pbw6q"]
 resource_name = "DogHead"
@@ -76,4 +76,12 @@ rotation = 0.06981317
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_v1gob")
 
-[node name="QuitGame" parent="." unique_id=1834841503 instance=ExtResource("7_50glp")]
+[node name="RichTextLabel" type="RichTextLabel" parent="DogCheck" unique_id=1252062190]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 21.0
+offset_right = 325.0
+offset_bottom = 61.0
+theme_override_fonts/normal_font = ExtResource("6_v1gob")
+theme_override_font_sizes/normal_font_size = 32
+text = "* NOT YET"

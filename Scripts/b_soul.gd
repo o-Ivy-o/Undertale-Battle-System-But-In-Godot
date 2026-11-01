@@ -42,17 +42,19 @@ func _on_test_bullet_hit(body,b) -> void:
 		hp -= 4
 		$InvincTimer.start()
 		$Soul.play()
-		print("hit")
+		#print("hit")
 		b.visible = false
 		b.canhurt = false
 		if hp <= 0:
-			
 			AudioHandler.selectedBattleTheme.stop()
 			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	elif body == self and invincible == true:
+		b.visible = false
+		b.canhurt = false
 
 
 func _on_invinc_timer_timeout() -> void:
-	print("invincover")
+	#print("invincover")
 	invincible = false
 	$Soul.stop()
 	$InvincTimer.stop()

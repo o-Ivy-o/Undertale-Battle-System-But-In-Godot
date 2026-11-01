@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxpe82cfwad6a" path="res://Scripts/main_menu.gd" id="1_ugbd5"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="2_owi87"]
-[ext_resource type="PackedScene" uid="uid://djquesnsypclm" path="res://Scenes/battle_system.tscn" id="2_rovg4"]
 [ext_resource type="FontFile" uid="uid://bcrxhig5scr35" path="res://Assets/Fonts/DeterminationSansWebRegular-369X.ttf" id="2_ugbd5"]
-[ext_resource type="PackedScene" uid="uid://bnn0j1wj3pb1m" path="res://Scenes/audio_handler.tscn" id="3_2hlkh"]
 [ext_resource type="Texture2D" uid="uid://dld152l58et2c" path="res://Assets/Sprites/mewtree.png" id="8_745pv"]
 [ext_resource type="Texture2D" uid="uid://cb7ftjtqc5dqx" path="res://Assets/Sprites/Flowery.png" id="8_drj1j"]
 [ext_resource type="Script" uid="uid://daevc0byf8i65" path="res://Scripts/settings_menu.gd" id="8_rovg4"]
@@ -19,6 +17,9 @@ font = ExtResource("2_owi87")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_745pv"]
+font = ExtResource("2_owi87")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lp62"]
 font = ExtResource("2_owi87")
 
 [sub_resource type="LabelSettings" id="LabelSettings_drj1j"]
@@ -57,9 +58,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ugbd5")
-BattleSystem = ExtResource("2_rovg4")
-
-[node name="AudioHandler" parent="." unique_id=2107132292 instance=ExtResource("3_2hlkh")]
 
 [node name="LOADING" type="RichTextLabel" parent="." unique_id=1949216993]
 visible = false
@@ -92,6 +90,15 @@ offset_bottom = 163.0
 text = "AUDIO:"
 label_settings = SubResource("LabelSettings_bowr3")
 
+[node name="GAMEPLAY" type="Label" parent="Settings Menu" unique_id=1543187730]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 212.0
+offset_right = 156.0
+offset_bottom = 229.0
+text = "GAMEPLAY:"
+label_settings = SubResource("LabelSettings_bowr3")
+
 [node name="Title" type="Label" parent="Settings Menu" unique_id=1346250887]
 layout_mode = 0
 offset_left = 183.0
@@ -109,6 +116,15 @@ offset_right = 231.0
 offset_bottom = 199.0
 text = "Battle Theme: None"
 label_settings = SubResource("LabelSettings_745pv")
+
+[node name="LOVE" type="Label" parent="Settings Menu" unique_id=550672616]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 232.0
+offset_right = 239.0
+offset_bottom = 249.0
+text = "LOVE: None"
+label_settings = SubResource("LabelSettings_4lp62")
 
 [node name="MusicVol" type="Label" parent="Settings Menu" unique_id=1487796132]
 layout_mode = 0
