@@ -54,8 +54,8 @@ func _on_type_timeout() -> void:
 		
 	if $Text.visible_characters < totalchar:
 		$Text.visible_characters += 1
-		AudioHandler.snd_txtivy.pitch_scale = randf_range(0.85, 1.15)
-		AudioHandler.snd_txtivy.play()
+		#AudioHandler.snd_txtivy.pitch_scale = randf_range(0.85, 1.15)
+		#AudioHandler.snd_txtivy.play()
 		
 	if $Text.visible_characters >= totalchar:
 		$Type.stop()

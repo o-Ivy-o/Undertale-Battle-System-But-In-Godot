@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	max_value = Data.maxhp.get(Global.PlayerLove-1)
+	max_value = Data.maxhp.get(Global.PlayerLove)
 	value = $"../../BSoul".hp

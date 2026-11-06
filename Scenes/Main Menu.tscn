@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dld152l58et2c" path="res://Assets/Sprites/mewtree.png" id="8_745pv"]
 [ext_resource type="Texture2D" uid="uid://cb7ftjtqc5dqx" path="res://Assets/Sprites/Flowery.png" id="8_drj1j"]
 [ext_resource type="Script" uid="uid://daevc0byf8i65" path="res://Scripts/settings_menu.gd" id="8_rovg4"]
-[ext_resource type="Texture2D" uid="uid://k0tcpdh2alak" path="res://Assets/Sprites/Tobydog.png" id="9_ebc80"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bowr3"]
 font = ExtResource("2_ugbd5")
@@ -75,12 +74,9 @@ scroll_active = false
 [node name="Settings Menu" type="Control" parent="." unique_id=1718128019]
 visible = false
 anchors_preset = 0
+offset_top = -6.71
+offset_bottom = -6.71
 script = ExtResource("8_rovg4")
-
-[node name="Tobydog" type="Sprite2D" parent="Settings Menu" unique_id=2091724222]
-position = Vector2(369, 234)
-scale = Vector2(2, 2)
-texture = ExtResource("9_ebc80")
 
 [node name="AUDIO" type="Label" parent="Settings Menu" unique_id=59388908]
 layout_mode = 0
@@ -164,11 +160,12 @@ text = "VISUAL:"
 label_settings = SubResource("LabelSettings_bowr3")
 
 [node name="Take your Time" type="RichTextLabel" parent="Settings Menu" unique_id=194970293]
+visible = false
 layout_mode = 0
-offset_left = 330.0
-offset_top = 166.00002
-offset_right = 400.0
-offset_bottom = 226.00002
+offset_left = 359.0
+offset_top = 154.0
+offset_right = 429.0
+offset_bottom = 214.0
 rotation = 0.2617994
 theme_override_colors/default_color = Color(1, 1, 1, 0.5137255)
 theme_override_fonts/normal_font = ExtResource("2_owi87")
@@ -176,25 +173,21 @@ text = "Take your time"
 
 [node name="HINT" type="RichTextLabel" parent="Settings Menu" unique_id=376024828]
 layout_mode = 0
-offset_left = 345.0
-offset_top = 15.0
-offset_right = 408.19904
-offset_bottom = 126.306625
-theme_override_colors/default_color = Color(1, 0, 0, 1)
+offset_left = 231.0
+offset_top = 249.71
+offset_right = 480.19904
+offset_bottom = 361.01666
+theme_override_colors/default_color = Color(1, 0, 0, 0.4117647)
 theme_override_fonts/normal_font = ExtResource("2_owi87")
 theme_override_font_sizes/normal_font_size = 12
-text = "Press ESC
-To
-DELETE 
-ALL
-DATA"
+text = "Press ESC To Delete all Data"
 
 [node name="Credit" type="RichTextLabel" parent="Settings Menu" unique_id=1959465698]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 196.0
-offset_right = 413.0
-offset_bottom = 248.0
+offset_right = 338.0
+offset_bottom = 218.71
 theme_override_colors/default_color = Color(1, 1, 1, 0.29411766)
 theme_override_fonts/normal_font = ExtResource("2_owi87")
 theme_override_font_sizes/normal_font_size = 8
@@ -202,12 +195,12 @@ text = "* Polite Buster by Alice:
 https://soundcloud.com/aarctoid"
 
 [node name="Main Menu" type="Control" parent="." unique_id=1394740662]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Mewtree" type="Sprite2D" parent="Main Menu" unique_id=1947934187]
+visible = false
 position = Vector2(350, 211)
 texture = ExtResource("8_745pv")
 

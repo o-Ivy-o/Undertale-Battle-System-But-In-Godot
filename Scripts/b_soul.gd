@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var hp = Data.maxhp.get(Global.PlayerLove-1)
+@export var hp = Data.maxhp.get(Global.PlayerLove)
 var Soulspeed = 60
 var invincible = false
 @export var soulmode : int    #0 = red #1 = blue
@@ -33,7 +33,9 @@ func _process(delta: float) -> void:
 			else:
 				velocity.x = 0
 	move_and_slide()
-
+	if hp <= 0:
+			AudioHandler.selectedBattleTheme.stop()
+			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func _on_test_bullet_hit(body,b) -> void:
 	if body == self and invincible != true:
@@ -45,9 +47,6 @@ func _on_test_bullet_hit(body,b) -> void:
 		#print("hit")
 		b.visible = false
 		b.canhurt = false
-		if hp <= 0:
-			AudioHandler.selectedBattleTheme.stop()
-			get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	elif body == self and invincible == true:
 		b.visible = false
 		b.canhurt = false

@@ -99,7 +99,6 @@ stream = ExtResource("16_mxah7")
 
 [node name="AudioAnotherhim" type="AudioStreamPlayer" parent="Music" unique_id=1231292703]
 stream = ExtResource("17_680g8")
-pitch_scale = 0.65
 parameters/looping = true
 
 [node name="InukumaWip" type="AudioStreamPlayer" parent="Music" unique_id=498604968]

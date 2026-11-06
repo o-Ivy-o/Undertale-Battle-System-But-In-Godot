@@ -1,6 +1,6 @@
 extends Node
 
-const savepath = "user://settings.dat"
+const savepath = "user://save.ini"
 var MusicVol = Global.MusicVol
 var Border = Global.border
 var BattleTheme = Global.BattleTheme
@@ -22,7 +22,6 @@ func _ready() -> void:
 	load_save()
 
 
-
 func save():
 	
 	var settings = {
@@ -30,33 +29,49 @@ func save():
 		"Volume" = MusicVol,
 		"Border" = Border,
 		"Theme" = BattleTheme,
-		"SkipIntro" = skipintro
+		"SkipIntro" = skipintro,
+		"Watched" = Global.watchedintro
 	}
 	
+	var jsonsetting = JSON.stringify(settings)
+	
 	var save = FileAccess.open(savepath,FileAccess.WRITE)
-	save.store_var(settings)
+	save.store_string(jsonsetting)
 	save.close()
-	print(settings)
+	print(jsonsetting)
 
 func load_save():
 	if FileAccess.file_exists(savepath):
 		var save = FileAccess.open(savepath,FileAccess.READ)
-		var loadedsettings = save.get_var()
+		var loadsave = save.get_line()
 		save.close()
 		
-		if loadedsettings.Border > Global.GlobalMaxBorder or loadedsettings.Border < 0:
-			loadedsettings.Border = 0
-		if loadedsettings.Volume > 2:
-			loadedsettings.Volume = 2
-		elif loadedsettings.Volume < 0:
-			loadedsettings.Volume = 0
+		var json = JSON.new()
+		
+		var parsesave = json.parse(loadsave)
+		if not parsesave == OK:
+			print("error while parsing save")
+			return
+		
+		var loadeddata = json.data
+		
+		if loadeddata.Border > Global.GlobalMaxBorder or loadeddata.Border < 0:
+			loadeddata.Border = 0
+		if loadeddata.Volume > 2:
+			loadeddata.Volume = 2
+		elif loadeddata.Volume < 0:
+			loadeddata.Volume = 0
 		#if loadedsettings.t > Global.MaxBattleTheme:
 			#loadedsettings.t = Global.MaxBattleTheme
-		Global.MusicVol = loadedsettings.Volume
-		Global.border = loadedsettings.Border
-		Global.BattleTheme = loadedsettings.Theme
-		Global.PlayerName = loadedsettings.Name
-		Global.SetName = loadedsettings.SkipIntro
-		print(loadedsettings)
+		var savetype = ["Volume","Border","Theme","Name","SkipIntro","Watched"]
+		for i in savetype:
+			if not loadeddata.has(i):
+				return
+		Global.MusicVol = loadeddata.Volume
+		Global.border = loadeddata.Border
+		Global.BattleTheme = loadeddata.Theme
+		Global.PlayerName = loadeddata.Name
+		Global.SetName = loadeddata.SkipIntro
+		Global.watchedintro = loadeddata.Watched
 	else:
 		print("nosave")

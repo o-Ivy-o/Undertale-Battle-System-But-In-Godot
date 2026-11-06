@@ -11,7 +11,7 @@ var MusicVol = 1
 var PlayerName : String = "CHARA"
 var PlayerLove : int = 1
 var SetName : bool = false
-
+var watchedintro : bool = false
 
 func _ready() -> void:
 	var screensize = DisplayServer.window_get_size()
