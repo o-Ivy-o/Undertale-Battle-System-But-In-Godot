@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://cgfpmynhwboba" path="res://Scripts/bullets.gd" id="20_e5ted"]
 [ext_resource type="PackedScene" uid="uid://baqeva5lfidp2" path="res://Scenes/test_bullet.tscn" id="20_qpxiv"]
 [ext_resource type="Script" uid="uid://5xomfyh10p6o" path="res://Scripts/status_ui.gd" id="22_heo5b"]
+[ext_resource type="Texture2D" uid="uid://dqexpubwtwbf7" path="res://Assets/Sprites/VEGETOIDIDLE.PNG" id="25_q76yu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
 animations = [{
@@ -693,6 +694,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_87yg3"]
+atlas = ExtResource("25_q76yu")
+region = Rect2(0, 0, 72, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40we0"]
+atlas = ExtResource("25_q76yu")
+region = Rect2(72, 0, 72, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdlsh"]
+atlas = ExtResource("25_q76yu")
+region = Rect2(144, 0, 72, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1h6d"]
+atlas = ExtResource("25_q76yu")
+region = Rect2(216, 0, 72, 104)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pe0rm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87yg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40we0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdlsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1h6d")
+}],
+"loop": 1,
+"name": &"Vegetoid",
+"speed": 2.0
+}]
+
 [node name="Battle System" type="Node" unique_id=2143983227]
 script = ExtResource("1_gsykg")
 
@@ -950,6 +987,33 @@ sprite_frames = SubResource("SpriteFrames_0qrxg")
 animation = &"Blue"
 
 [node name="InvincTimer" type="Timer" parent="BSoul" unique_id=716828214]
+
+[node name="Enemies" type="Control" parent="." unique_id=321898932]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Enemy1" type="AnimatedSprite2D" parent="Enemies" unique_id=1907563292]
+position = Vector2(230, 94.00001)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_pe0rm")
+animation = &"Vegetoid"
+frame_progress = 0.9649107
+
+[node name="Enemy2" type="AnimatedSprite2D" parent="Enemies" unique_id=216544889]
+position = Vector2(145.00002, 94)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_pe0rm")
+animation = &"Vegetoid"
+frame_progress = 0.9649107
+
+[node name="Enemy3" type="AnimatedSprite2D" parent="Enemies" unique_id=829091596]
+position = Vector2(315, 94)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_pe0rm")
+animation = &"Vegetoid"
+frame_progress = 0.9649107
 
 [connection signal="timeout" from="BHellBox/Text/LetterTimer" to="." method="_on_letter_timer_timeout"]
 [connection signal="hit" from="Bullets/TestBullet" to="BSoul" method="_on_test_bullet_hit"]

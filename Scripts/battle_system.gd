@@ -1,5 +1,8 @@
 extends Node
 
+var enemies : Array = [Data.enemys["vegetoid"],Data.enemys["vegetoid"],Data.enemys["vegetoid"],] #up to 3
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +11,10 @@ func _ready() -> void:
 		i.visible = false
 	await get_tree().create_timer(.1).timeout
 	AudioHandler.selectedBattleTheme.play()
+	init()
 
+func init():
+	pass
 
 func startbhell():
 	$BHellBox/Text/LetterTimer.stop()

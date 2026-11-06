@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 		Global.MusicVol = 1.0
 		Global.border = 0
 		Global.BattleTheme = 0
-		Global.PlayerName = "GASTER"
+		Global.PlayerName = "CHARA"
 		Global.SetName = false
 		AudioHandler.settingsmenu.stop()
 		await get_tree().create_timer(.1).timeout
