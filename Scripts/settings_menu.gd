@@ -78,7 +78,7 @@ https://soundcloud.com/aarctoid"
 				else:
 					AudioHandler.snd_cantselect.play()
 			4:
-				if Global.PlayerLove > 0:
+				if Global.PlayerLove > 1:
 					Global.PlayerLove -= 1
 					AudioHandler.snd_menumove.play()
 				else:
