@@ -44,8 +44,8 @@ func _process(_delta: float) -> void:
 				showsettings()
 				AudioHandler.checktime()
 				AudioHandler.menu.stream_paused = true
-				AudioHandler.settingsmenu.play()
-				#print("opening settings")
+				AudioHandler.mus_harpnoise.play()
+				get_tree().create_timer(1).timeout.connect(AudioHandler.settingsmenu.play)
 				cnmi = false
 			2:
 				AudioHandler.snd_select.play()
@@ -81,6 +81,6 @@ func hidesettings():
 	
 func showsettings():
 	$"Settings Menu".visible = true
-	await get_tree().create_timer(.1).timeout
+	await get_tree().create_timer(1).timeout
 	$"Settings Menu".cmi = true
 	

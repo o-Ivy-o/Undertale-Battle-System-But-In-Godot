@@ -40,6 +40,7 @@ func _process(_delta: float) -> void:
 			$Transition.play("FriskAppear")
 		elif $Text.visible_ratio >= 1  and caninteract and curtxtp == mxtxtp:
 			$Transition.play("Transition")
+			AudioHandler.audio_anotherhim.stop()
 			caninteract = false
 
 func _on_type_timeout() -> void:

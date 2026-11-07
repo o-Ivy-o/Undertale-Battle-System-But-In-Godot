@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://1emscvxf7hd4" path="res://Scripts/sounds.gd" id="1_6y3po"]
 [ext_resource type="AudioStream" uid="uid://cbudqr3xsal6o" path="res://Assets/Sounds/snd_txtivy.ogg" id="2_81jal"]
 [ext_resource type="AudioStream" uid="uid://c503ptj4aob2w" path="res://Assets/Sounds/snd_break1.wav" id="2_680g8"]
+[ext_resource type="AudioStream" uid="uid://c2p2pepyrqt1o" path="res://Assets/Sounds/mus_harpnoise.ogg" id="2_lq6ld"]
 [ext_resource type="AudioStream" uid="uid://bdv4af0apdtbk" path="res://Assets/Sounds/snd_break2.wav" id="3_81jal"]
 [ext_resource type="AudioStream" uid="uid://c8metllk7gbye" path="res://Assets/Sounds/snd_cantselect.wav" id="4_yjp8e"]
 [ext_resource type="AudioStream" uid="uid://8bn11pnsvdb6" path="res://Assets/Sounds/snd_damage.wav" id="5_lq6ld"]
@@ -25,12 +26,15 @@
 [ext_resource type="AudioStream" uid="uid://0w523frmy0vb" path="res://Assets/Music/mus_options_winter.ogg" id="21_1sj3s"]
 [ext_resource type="AudioStream" uid="uid://dobn1a43ogjmv" path="res://Assets/Music/mus_battle1.ogg" id="23_6odp6"]
 [ext_resource type="AudioStream" uid="uid://dve555j3skw3v" path="res://Assets/Music/RUDEBUSTER.ogg" id="24_yjp8e"]
-[ext_resource type="AudioStream" uid="uid://cg3egb4ah8elj" path="res://Assets/Music/enemygodotundertale.ogg" id="25_yjp8e"]
+[ext_resource type="AudioStream" uid="uid://biuyl6c2l37ub" path="res://Assets/Sounds/wahwrahwRAJWAJ.ogg" id="25_yjp8e"]
 
 [node name="AudioHandler" type="Node2D" unique_id=2107132292]
 script = ExtResource("1_6y3po")
 
 [node name="Sounds" type="Node" parent="." unique_id=302653140]
+
+[node name="MusHarpnoise" type="AudioStreamPlayer" parent="Sounds" unique_id=1031653377]
+stream = ExtResource("2_lq6ld")
 
 [node name="SndTxtivy" type="AudioStreamPlayer" parent="Sounds" unique_id=1868157100]
 stream = ExtResource("2_81jal")
@@ -122,7 +126,7 @@ stream = ExtResource("18_0gbaw")
 stream = ExtResource("23_6odp6")
 metadata/ThemeName = "Enemy Approach"
 
-[node name="Enemygodotundertale" type="AudioStreamPlayer" parent="BattleThemes" unique_id=1214854701]
+[node name="WahwrahwRajwaj" type="AudioStreamPlayer" parent="BattleThemes" unique_id=335656842]
 stream = ExtResource("25_yjp8e")
 metadata/ThemeName = "Enemy Imminent"
 

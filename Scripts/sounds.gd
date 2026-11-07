@@ -2,6 +2,7 @@ extends Node
 
 @onready var BattleThemes : Array = $BattleThemes.get_children()
 @onready var selectedBattleTheme : AudioStreamPlayer
+@onready var mus_harpnoise: AudioStreamPlayer = $Sounds/MusHarpnoise
 
 @onready var snd_txtivy: AudioStreamPlayer = $Sounds/SndTxtivy
 @onready var snd_break_1: AudioStreamPlayer2D = $Sounds/SndBreak1
@@ -27,7 +28,6 @@ extends Node
 @onready var battle: AudioStreamPlayer = $BattleThemes/Battle
 @onready var mus_battle_1: AudioStreamPlayer = $BattleThemes/MusBattle1
 @onready var polite_buster_by_alice: AudioStreamPlayer = $"BattleThemes/Polite Buster by Alice"
-@onready var freedom_breaker: AudioStreamPlayer = $BattleThemes/FreedomBreaker
 @onready var settingsmenu : AudioStreamPlayer
 var time = Time.get_datetime_dict_from_system()
 var mnth = time["month"]

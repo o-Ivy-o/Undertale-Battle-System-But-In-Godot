@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c8h25xxntbc3h" path="res://Scripts/survey_program.gd" id="1_re3vj"]
 [ext_resource type="PackedScene" uid="uid://btdfg1fqdrmh3" path="res://Scenes/Main.tscn" id="2_4r2l8"]
-[ext_resource type="PackedScene" uid="uid://bnn0j1wj3pb1m" path="res://Scenes/audio_handler.tscn" id="2_j4ylw"]
 [ext_resource type="FontFile" uid="uid://bfcv1dehw42d3" path="res://Assets/Fonts/DeterminationMonoWebRegular-Z5oq.ttf" id="2_r3uro"]
 [ext_resource type="PackedScene" uid="uid://ct7163kke0s6c" path="res://Scenes/Border.tscn" id="5_j4ylw"]
 [ext_resource type="Script" uid="uid://1iwxsj2s0hx1" path="res://Scripts/naming_screen.gd" id="6_4r2l8"]
@@ -11,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cgwve1akl0mo0" path="res://Assets/Sprites/Light.png" id="8_uauwt"]
 [ext_resource type="Texture2D" uid="uid://bcnn3p3n2gbo6" path="res://Assets/Sprites/Soul.png" id="9_f2wtj"]
 [ext_resource type="AudioStream" uid="uid://8vujrci3v4cs" path="res://Assets/Sounds/snd_spearappear.wav" id="10_6xsjm"]
+[ext_resource type="AudioStream" uid="uid://bevmkkajq15x" path="res://Assets/Sounds/mus_cymbal.ogg" id="10_amve1"]
 [ext_resource type="AudioStream" uid="uid://dmm1t7ammabry" path="res://Assets/Sounds/snd_grab.wav" id="11_mdy8p"]
 
 [sub_resource type="Animation" id="Animation_amve1"]
@@ -394,10 +394,22 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MusCymbal:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_uauwt"]
 resource_name = "Transition"
-length = 5.0
+length = 5.21
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -405,10 +417,22 @@ tracks/0/path = NodePath("WhiteTransition:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.9333334),
+"times": PackedFloat32Array(0.5, 5.133333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MusCymbal:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f2wtj"]
@@ -428,8 +452,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_re3vj")
 mainscene = ExtResource("2_4r2l8")
-
-[node name="AudioHandler" parent="." unique_id=2107132292 instance=ExtResource("2_j4ylw")]
 
 [node name="Text" type="RichTextLabel" parent="." unique_id=488393320]
 layout_mode = 0
@@ -815,6 +837,9 @@ autoplay = &"Shake"
 [node name="Transition" type="AnimationPlayer" parent="." unique_id=1262109995]
 libraries/ = SubResource("AnimationLibrary_f2wtj")
 
+[node name="MusCymbal" type="AudioStreamPlayer" parent="." unique_id=705813416]
+stream = ExtResource("10_amve1")
+
 [node name="SndSpearappear" type="AudioStreamPlayer" parent="." unique_id=248544621]
 stream = ExtResource("10_6xsjm")
 
@@ -829,5 +854,3 @@ texture = ExtResource("6_vlqoj")
 
 [connection signal="timeout" from="Type" to="." method="_on_type_timeout"]
 [connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
-
-[editable path="AudioHandler"]

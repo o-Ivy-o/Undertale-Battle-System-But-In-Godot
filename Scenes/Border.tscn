@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xox3fv6o3fbq" path="res://Scripts/border.gd" id="1_08uxl"]
 [ext_resource type="Texture2D" uid="uid://mwmih50wxumu" path="res://Assets/Borders/ruins.png" id="2_1stvb"]
+[ext_resource type="Texture2D" uid="uid://648guj4euphb" path="res://Assets/Borders/None.png" id="2_4vx3b"]
 [ext_resource type="Texture2D" uid="uid://pf868s8mrg0d" path="res://Assets/Borders/Simple.png" id="2_duxal"]
 [ext_resource type="Texture2D" uid="uid://cawopmjfvnp1j" path="res://Assets/Borders/Snowdin.png" id="3_146yj"]
 [ext_resource type="Texture2D" uid="uid://pnhs4b75l5np" path="res://Assets/Borders/Waterfall.png" id="4_08uxl"]
@@ -16,7 +17,14 @@
 [node name="Control" type="CanvasLayer" unique_id=2123590375]
 script = ExtResource("1_08uxl")
 
+[node name="None" type="Sprite2D" parent="." unique_id=1105800038]
+position = Vector2(240, 135)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4vx3b")
+metadata/BorderName = "None"
+
 [node name="Simple" type="Sprite2D" parent="." unique_id=877679488]
+visible = false
 position = Vector2(240, 135)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_duxal")
